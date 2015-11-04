@@ -113,8 +113,10 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<a href="/" class="profilepic">
-				<img lazy-src="/img/avatar.png" class="js-avatar">
-			</a>
+			
+			<img src="/img/avatar.png" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+			
+		</a>
 			<hgroup>
 			  <h1 class="header-author"><a href="/" title="回到主页">Vincen</a></h1>
 			</hgroup>
@@ -122,11 +124,11 @@
 			<nav class="header-menu">
 				<ul>
 				
-					<li><a href="/archives/">归档</a></li>
+				<li><a href="/archives/"><h2>归档</h2></a></li>
 		        
-					<li><a href="/tags/">标签</a></li>
+				<li><a href="/tags/"><h2>标签</h2></a></li>
 		        
-					<li><a href="/about/">关于</a></li>
+				<li><a href="/about/"><h2>关于</h2></a></li>
 		        
 		        <div class="clearfix"></div>
 				</ul>
@@ -493,7 +495,7 @@
 <script type="text/javascript">
   var backgroundList = ["url(/background/bg-1.jpg)", "url(/background/bg-2.jpg)","url(/background/bg-3.jpg)","url(/background/bg-4.jpg)","url(/background/bg-5.jpg)"];
   var background = Math.floor(Math.random() * backgroundList.length);
-  $("body").css({"background": backgroundList[0], "background-attachment": "fixed", "background-size": "cover"});
+  $("body").css({"background": backgroundList[1], "background-attachment": "fixed", "background-size": "cover"});
 </script>
 
 
