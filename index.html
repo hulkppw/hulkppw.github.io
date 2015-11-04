@@ -237,6 +237,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="反转二叉树">反转二叉树</h2><p>前一段时间国外某大牛面试Google被刷掉，原因是没有能够徒手写出来反转二叉树的代码，在网上看到了一个人的分析代码，特此记下来。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * public class TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode left;</span><br><span class="line"> *     TreeNode right;</span><br><span class="line"> *     TreeNode(int x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> TreeNode <span class="title">invertTree</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        root.left = invertTree(root.left);</span><br><span class="line">        root.right = invertTree(root.right);</span><br><span class="line"></span><br><span class="line">        TreeNode tmp = root.left;</span><br><span class="line">        root.left = root.right;</span><br><span class="line">        root.right = tmp;</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
       
     </div>
@@ -358,7 +359,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="垃圾收集">垃圾收集</h2><p>判断对象是否存活的算法常用的有两种:<br>1.引用计数算法，给对象添加一个引用计数器，每次对象被引用的时候，计数器的值就加1；引用失效时，计数器值减1，当计数器的值都为0的对象就是不再被引用的。<br>优点：实现简单，判定效率高<br>缺点：对象之间互相循环引用的情况<br>
+        <h2 id="垃圾收集">垃圾收集</h2><p>判断对象是否存活的算法常用的有两种:<br>1.引用计数算法，给对象添加一个引用计数器，每次对象被引用的时候，计数器的值就加1；引用失效时，计数器值减1，当计数器的值都为0的对象就是不再被引用的。<br>优点：实现简单，判定效率高<br>缺点：对象之间互相循环引用的情况</p>
+<p>2.根搜索算法，通过一系列的“GC Roots”对象作为起始点，从这些节点开始向下搜索，搜索所走的路径成为引用链（Reference Chain)，当一个对象到GC Roots没有任何引用链相连时，则证明此对象是不可用的。<br>垃圾收集算法<br>
       
       
     </div>
@@ -393,10 +395,10 @@
 
 
   
-    <article id="post-关于Java技术的一些理解" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-关于Java的一些基础知识" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2013/11/17/关于Java技术的一些理解/" class="article-date">
+      <a href="/2013/11/17/关于Java的一些基础知识/" class="article-date">
   	<time datetime="2013-11-16T16:00:00.000Z" itemprop="datePublished">2013-11-17</time>
 </a>
     </div>
@@ -410,7 +412,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2013/11/17/关于Java技术的一些理解/">关于Java技术的一些理解</a>
+      <a class="article-title" href="/2013/11/17/关于Java的一些基础知识/">关于Java技术的一些理解</a>
     </h1>
   
 
@@ -419,7 +421,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>刚接触java时，很不能理解jdk、java se、java ee、jdk1.5、j2ee 1.4等一些词语，感觉很混乱。后来通过查阅一些资料，知道jdk是java的核心，提供了java运行时环境、java工具盒java基础类库(也就是一些基础的API)。java的版本最初有两个，一个是java1.1和java1.2，后来为了区分将java1.2改为了java2，现在我们所说的java都是指java2。在java2之前的jdk版本都是1.1X的。java中jdk有三个j2se、j2ee、j2me，其中j2se称为标准版，也就是通用的一个版本，从jdk5.0改为Java SE;j2ee称为企业版，使用这种jdk开发j2ee应用程序，从5.0开始改为Java EE;ME(J2ME)，micro edition，主要用于移动设备、嵌入式设备上的java应用程序，从JDK 5.0开始，改名为Java ME。<br>
+        <p>刚接触java时，很不能理解jdk、java se、java ee、jdk1.5、j2ee 1.4等一些词语，感觉很混乱。后来通过查阅一些资料，知道jdk是java的核心，提供了java运行时环境、java工具盒java基础类库(也就是一些基础的API)。java的版本最初有两个，一个是java1.1和java1.2，后来为了区分将java1.2改为了java2，现在我们所说的java都是指java2。在java2之前的jdk版本都是1.1X的。java中jdk有三个j2se、j2ee、j2me，其中j2se称为标准版，也就是通用的一个版本，从jdk5.0改为Java SE;j2ee称为企业版，使用这种jdk开发j2ee应用程序，从5.0开始改为Java EE;ME(J2ME)，micro edition，主要用于移动设备、嵌入式设备上的java应用程序，从JDK 5.0开始，改名为Java ME。</p>
+<p>j2ee使用多层的分布式应用模型，典型分层是四层结构：<br>a.运行在客户端机器上的客户层组件<br>b.运行在J2ee服务器上的Web层组件<br>c.运行在j2ee服务器上的业务逻辑层组件<br>d.运行在EIS服务器上的企业信息系统(Enterprise informationsystem)层软件(好专业，就是与数据库的连接操作)</p>
+<p><img src="/images/20131117105211624.jpg" alt=""><br>
       
       
     </div>
@@ -435,7 +439,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2013/11/17/关于Java技术的一些理解/#more">more >></a>
+          <a  href="/2013/11/17/关于Java的一些基础知识/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -541,7 +545,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>本次介绍几种经典排序算法以及Java实现代码<br>1.冒泡排序<br>冒泡排序是属于相邻两两比较进行排序的一种，由于其实现是经过1到n-1轮排序，<br>通过比较相邻的两个数，大的向下继续与相邻的进行比较，直到找到正确的顺序位置。<br>
+        <p>本次介绍几种经典排序算法以及Java实现代码<br>1.冒泡排序<br>冒泡排序是属于相邻两两比较进行排序的一种，由于其实现是经过1到n-1轮排序，<br>通过比较相邻的两个数，大的向下继续与相邻的进行比较，直到找到正确的顺序位置。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span>[] a)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a.length - <span class="number">1</span>; i++) &#123;<span class="comment">//比较轮次，经过n-1次比较</span></span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; a.length - <span class="number">1</span> - i; j++) &#123;<span class="comment">//每次比较相邻的两个数，大的向后移动</span></span><br><span class="line">				<span class="keyword">if</span> (a[j] &gt; a[j + <span class="number">1</span>]) &#123;</span><br><span class="line">					<span class="keyword">int</span> temp = a[j + <span class="number">1</span>];</span><br><span class="line">					a[j + <span class="number">1</span>] = a[j];</span><br><span class="line">					a[j] = temp;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
       
       
     </div>
@@ -603,6 +608,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>这个栗子是用Java实现的二分查找</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BinarySearch</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span> array[], <span class="keyword">int</span> number, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span> right = number - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">			<span class="keyword">int</span> middle = left + ((right - left) &gt;&gt; <span class="number">1</span>);</span><br><span class="line">			<span class="keyword">if</span> (array[middle] &gt; value) &#123;</span><br><span class="line">				right = middle - <span class="number">1</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (array[middle] &lt; value) &#123;</span><br><span class="line">				left = middle + <span class="number">1</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="keyword">return</span> middle;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
       
     </div>
