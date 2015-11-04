@@ -197,6 +197,8 @@ a {
 #container {
   position: relative;
   min-height: 100%;
+  width: 70%;
+  margin: 0 auto;
 }
 #container #mobile-nav {
   display: none;
@@ -337,7 +339,7 @@ a {
   #container .article {
 /*    padding: 10px;*/
     margin: 10px;
-    font-size: 14px;
+    font-size: 15px;
   }
   #container .article .article-entry {
     padding-left: 0;
@@ -567,6 +569,305 @@ a {
   #container .post-nav-button {
     display: none;
   }
+}
+#container .left-col {
+  display: none;
+}
+#container .mid-col {
+  left: 0;
+}
+#container #header .header-nav {
+  position: relative;
+}
+#container .header-author.fixed {
+  position: fixed;
+  top: -8px;
+  width: 100%;
+  color: #ddd;
+}
+#container .header-author.fixed a {
+  color: #fff;
+}
+#container .overlay .slider-trigger {
+  position: absolute;
+  z-index: 101;
+  bottom: 0;
+  left: 0;
+  width: 42px;
+  height: 42px;
+}
+#container .overlay .slider-trigger:hover {
+  background: #444;
+}
+#container .overlay .slider-trigger:before {
+  color: #ddd;
+  content: "\f00b";
+  font: 16px FontAwesome;
+  width: 16px;
+  height: 16px;
+  margin-left: 9px;
+  margin-top: 14px;
+  display: block;
+}
+#container .article-header {
+  border-left: none;
+  padding: 0;
+  border-bottom: 1px dotted #ddd;
+}
+#container .article-header h1 {
+  margin-bottom: 10px;
+}
+#container .header-subtitle {
+  padding: 0 24px;
+}
+#container .article-info-index.article-info {
+  padding-top: 10px;
+  margin: 0;
+  border-top: 1px solid #ddd;
+}
+#container .article-info-post.article-info {
+  margin: 0;
+  padding-top: 10px;
+  border: none;
+}
+#container .article-more-link a {
+  float: right;
+}
+#container #viewer-box .viewer-box-l {
+  font-size: 14px;
+}
+#container .article {
+/*    padding: 10px;*/
+  margin: 10px;
+  font-size: 15px;
+}
+#container .article .article-entry {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 10px;
+}
+#container .article .article-title {
+  font-size: 18px;
+/*max-width: 185px;*/
+  padding-right: 5em;
+  display: block;
+  margin: 0;
+}
+#container .article .article-meta {
+  width: auto;
+  height: 30px;
+  margin-top: -5px;
+  position: ralative;
+}
+#container .article .article-meta .article-date {
+  font-size: 12px;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  color: #666;
+  background: none;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: left;
+  margin-left: 10px;
+}
+#container .article .article-meta .article-date time {
+  width: auto;
+  float: right;
+  margin-right: 10px;
+}
+#container .article .article-meta .article-tag-list {
+  margin-top: 7px;
+  position: absolute;
+  right: 10px;
+  top: 0;
+}
+#container .article .article-meta .article-tag-list:before {
+  float: left;
+  margin-top: 1px;
+  left: 0;
+}
+#container .article .article-meta .article-tag-list .article-tag-list-item {
+  float: left;
+  padding-left: 0;
+  width: auto;
+  max-width: 83px;
+}
+#container .article .article-meta .article-category {
+  margin-top: 7px;
+  position: absolute;
+  right: 10px;
+  top: -30px;
+}
+#container .article .article-meta .article-category:before {
+  float: left;
+  margin-top: 1px;
+  left: 15px;
+}
+#container .article .article-meta .article-category .article-category-link {
+  max-width: 83px;
+  width: auto;
+  padding-left: 10px;
+}
+#container .article-meta {
+  padding: 12px;
+}
+#container .article-inner {
+  padding: 12px;
+}
+#container .share {
+  padding: 3px 10px;
+}
+#container .duoshuo {
+  padding: 0 13px;
+}
+#container #disqus_thread {
+  padding: 0 13px;
+}
+#container #mobile-nav {
+  display: block;
+}
+#container #page-nav .extend {
+  opacity: 1;
+}
+#container .instagram .open-ins {
+  left: 2px;
+  top: -30px;
+  color: #aaa;
+}
+#container .info-on-right {
+  float: initial;
+}
+#container .archives-wrap {
+  margin: 10px 10px 0px;
+  padding: 10px;
+}
+#container .archives-wrap .archive-article-title {
+  font-size: 14px;
+}
+#container .archives-wrap .archive-year-wrap {
+  position: relative;
+  padding: 0 0 0 0;
+}
+#container .archives-wrap .archive-year-wrap a {
+  padding: 0 0 0 0;
+}
+#container .archives-wrap .article-meta .archive-article-date {
+  font-size: 12px;
+  margin-right: 10px;
+  margin-top: -5px;
+}
+#container .archives-wrap .article-meta .article-tag-list-link {
+  font-size: 12px;
+}
+#container .archives .archive-article {
+  padding: 10px 0;
+  margin-left: 0;
+}
+#container #footer .footer-left {
+  float: initial;
+  margin-bottom: 10px;
+}
+#container #footer .footer-right {
+  float: initial;
+}
+#container .article-category::before {
+  display: none;
+}
+#container .article-tag::before {
+  display: none;
+}
+#container .article-meta time:before {
+  display: none;
+}
+#container .visit {
+  margin-top: 1em;
+}
+#container #tocButton {
+  z-index: 100;
+  position: fixed;
+  left: 0.5em;
+  top: auto; /*In order to cover style in article.styl*/
+  bottom: 10px;
+  background: rgba(255,255,255,0.7);
+  font-size: 1em;
+  font-weight: bold;
+  color: #808080;
+  padding: 0.2em 0.4em;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  border-style: outset;
+}
+#container #tocButton:hover {
+  color: #88acdb;
+  font-size: 1em;
+}
+#container .toc-article {
+  display: none;
+  z-index: 99;
+  left: 0;
+  background: none;
+  font-size: 1em;
+  line-height: 1.25em;
+  -webkit-border-radius: 2.8%;
+  border-radius: 2.8%;
+  margin-left: 0;
+  top: 38%;
+  padding: 10px;
+  padding-left: 0;
+  bottom: 1em;
+  height: auto;
+  max-height: 58%;
+  width: none;
+  width: auto;
+  min-width: 7em;
+  max-width: 61.8%;
+  overflow: auto;
+}
+#container .toc-article .toc-title {
+  display: none;
+}
+#container .toc-article .toc {
+  padding: 0.4em;
+}
+#container .toc-article ol {
+  background: rgba(255,255,255,0.75);
+  padding: 0.5em;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin: 0;
+}
+#container .toc-article ol ol {
+  padding: 0.1em 0;
+  padding-left: 1.2em;
+}
+#container .toc-article a {
+  color: #767676;
+}
+#container .copyright {
+  width: 90%;
+  padding: 0.5em 1.3em;
+}
+#container .scroll {
+  right: 1.2em;
+}
+#container .scroll li {
+  font-size: 1.7em;
+}
+#container .hide-labels {
+  position: fixed;
+  left: 42px;
+  top: 78px;
+  color: #fff;
+  opacity: 0.6;
+}
+#container .hide-labels:hover {
+  color: none;
+  opacity: 1;
+}
+#container .post-nav-button {
+  display: none;
 }
 .header-author {
   text-align: center;
