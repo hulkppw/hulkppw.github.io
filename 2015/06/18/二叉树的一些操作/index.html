@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   
-  <title>二叉树的一些操作 | hellored</title>
+  <title>二叉树的一些操作 | </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="反转二叉树前一段时间国外某大牛面试Google被刷掉，原因是没有能够徒手写出来反转二叉树的代码，在网上看到了一个人的分析代码，特此记下来。
 1234567891011121314151617181920212223/** * Definition for a binary tree node. * public class TreeNode &amp;#123; *     int val; *">
 <meta property="og:type" content="article">
 <meta property="og:title" content="二叉树的一些操作">
 <meta property="og:url" content="http://www.tuwaner.com/2015/06/18/二叉树的一些操作/index.html">
-<meta property="og:site_name" content="hellored">
+<meta property="og:site_name">
 <meta property="og:description" content="反转二叉树前一段时间国外某大牛面试Google被刷掉，原因是没有能够徒手写出来反转二叉树的代码，在网上看到了一个人的分析代码，特此记下来。
 1234567891011121314151617181920212223/** * Definition for a binary tree node. * public class TreeNode &amp;#123; *     int val; *">
 <meta property="og:updated_time" content="2015-11-04T06:29:28.362Z">
@@ -19,173 +19,91 @@
 <meta name="twitter:description" content="反转二叉树前一段时间国外某大牛面试Google被刷掉，原因是没有能够徒手写出来反转二叉树的代码，在网上看到了一个人的分析代码，特此记下来。
 1234567891011121314151617181920212223/** * Definition for a binary tree node. * public class TreeNode &amp;#123; *     int val; *">
   
-    <link rel="alternative" href="/atom.xml" title="hellored" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/styles.css" type="text/css">
+  
+
 </head>
+
 <body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-	<header id="header" class="inner">
-		<a href="/" class="profilepic">
-			
-			<img src="/img/avatar.png" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
-			
-		</a>
-
-		<hgroup style="font-weight:bold">
-		  <h1 class="header-author"><a href="/">主页</a></h1>
-		</hgroup>
-
-		
-				
-
-		<div id="switch-area" class="switch-area">
-			<div class="switch-wrap">
-				<section class="switch-part switch-part1">
-					<nav class="header-menu">
-						<ul>
-						
-							<li style="font-weight:bold"><a href="/archives/"><h2>归档</h2></a></li>
-				        
-							<li style="font-weight:bold"><a href="/tags/"><h2>标签</h2></a></li>
-				        
-							<li style="font-weight:bold"><a href="/about/"><h2>关于</h2></a></li>
-				        
-						</ul>
-					</nav>
-					<nav class="header-nav">
-						<ul class="social">
-							
-								<li id="Email"><a class="Email" target="_blank" href="/" title="Email"></a></li>
-					        
-								<li id="GitHub"><a class="GitHub" target="_blank" href="/#" title="GitHub"></a></li>
-					        
-								<li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
-					        
-						</ul>
-					</nav>
-				</section>
-				
-				
-				<section class="switch-part switch-part2">
-					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a>
-					</div>
-				</section>
-				
-				
-				
-				<section class="switch-part switch-part3">
-					<div id="js-friends">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://tuwaner.com/">tuwaner</a>
-			        
-			        </div>
-				</section>
-				
-
-				
-				
-				<section class="switch-part switch-part4">
-				
-					<div id="js-aboutme">Vincen</div>
-				</section>
-				
-			</div>
-		</div>
-	</header>				
-</div>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
     </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Vincen</a></h1>
-  	</div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<a href="/" class="profilepic">
-			
-			<img src="/img/avatar.png" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
-			
-		</a>
-			<hgroup>
-			  <h1 class="header-author"><a href="/" title="回到主页">Vincen</a></h1>
-			</hgroup>
-			
-			<nav class="header-menu">
-				<ul>
-				
-				<li><a href="/archives/"><h2>归档</h2></a></li>
-		        
-				<li><a href="/tags/"><h2>标签</h2></a></li>
-		        
-				<li><a href="/about/"><h2>关于</h2></a></li>
-		        
-		        <div class="clearfix"></div>
-				</ul>
-			</nav>
-			<nav class="header-nav">
-						<ul class="social">
-							
-								<li id="Email"><a class="Email" target="_blank" href="/" title="Email"></a></li>
-					        
-								<li id="GitHub"><a class="GitHub" target="_blank" href="/#" title="GitHub"></a></li>
-					        
-								<li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
-					        
-						</ul>
-			</nav>
-		</header>				
-	</div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">首页</a></li>
+        
+          <li><a class=""
+                 href="/archives/">归档</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
 </nav>
-      <div class="body-wrap"><article id="post-二叉树的一些操作" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title"></h1>
   
-    <div class="article-meta">
-      <a href="/2015/06/18/二叉树的一些操作/" class="article-date">
-  	<time datetime="2015-06-17T16:00:00.000Z" itemprop="datePublished">2015-06-18</time>
-</a>
-    </div>
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-二叉树的一些操作" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
+    <h2 class="article-title" itemprop="name">
       二叉树的一些操作
-    </h1>
+    </h2>
   
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
 
-        
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
-	</div>
+  </header>
 
-        <div class="clearfix"></div>
-      </div>
-      
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2015/06/18/二叉树的一些操作/" class="article-date"><time datetime="2015-06-17T16:00:00.000Z" itemprop="datePublished">2015-06-18</time></a>
+</div>
+
     
+    
+
+  </div>
+  <div class="article-inner">
+
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="反转二叉树">反转二叉树</h2><p>前一段时间国外某大牛面试Google被刷掉，原因是没有能够徒手写出来反转二叉树的代码，在网上看到了一个人的分析代码，特此记下来。</p>
@@ -195,248 +113,103 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * public class BinaryTree &#123;</span><br><span class="line"> *     Object element;</span><br><span class="line"> *     TreeNode left;</span><br><span class="line"> *     TreeNode right;</span><br><span class="line"> *     </span><br><span class="line"> * &#125;</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/** 访问节点 */</span></span><br><span class="line">　　<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">visit</span><span class="params">(BinaryTree p)</span> </span>&#123;</span><br><span class="line">　　　　System.out.print(p.getKey() + <span class="string">" "</span>);</span><br><span class="line">　　&#125;</span><br><span class="line">　　<span class="comment">/** 递归实现前序遍历 */</span></span><br><span class="line">　　<span class="function"><span class="keyword">protected</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">preorder</span><span class="params">(BinaryTree p)</span> </span>&#123;</span><br><span class="line">　　　　<span class="keyword">if</span> (p != <span class="keyword">null</span>) &#123;</span><br><span class="line">　　　　　　visit(p);</span><br><span class="line">　　　　　　preorder(p.getLeft());</span><br><span class="line">　　　　　　preorder(p.getRight());</span><br><span class="line">　　　　&#125;</span><br><span class="line">　　&#125;</span><br><span class="line">　　<span class="comment">/** 递归实现中序遍历 */</span></span><br><span class="line">　　<span class="function"><span class="keyword">protected</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">inorder</span><span class="params">(BinaryTree p)</span> </span>&#123;</span><br><span class="line">　　　　<span class="keyword">if</span> (p != <span class="keyword">null</span>) &#123;</span><br><span class="line">　　　　　　inorder(p.getLeft());</span><br><span class="line">　　　　　　visit(p);</span><br><span class="line">　　　　　　inorder(p.getRight());</span><br><span class="line">　　　　&#125;</span><br><span class="line">　　&#125;</span><br><span class="line">　　<span class="comment">/** 递归实现后序遍历 */</span></span><br><span class="line">　　<span class="function"><span class="keyword">protected</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">postorder</span><span class="params">(BinaryTree p)</span> </span>&#123;</span><br><span class="line">　　　　<span class="keyword">if</span> (p != <span class="keyword">null</span>) &#123;</span><br><span class="line">　　　　　　postorder(p.getLeft());</span><br><span class="line">　　　　　　postorder(p.getRight());</span><br><span class="line">　　　　　　visit(p);</span><br><span class="line">　　　　&#125;</span><br><span class="line">　　&#125;</span><br><span class="line"><span class="comment">/** 非递归实现前序遍历 */</span></span><br><span class="line">　　<span class="function"><span class="keyword">protected</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">iterativePreorder</span><span class="params">(BinaryTree p)</span> </span>&#123;</span><br><span class="line">　　　　Stack&lt;BinaryTree&gt; stack = <span class="keyword">new</span> Stack&lt;BinaryTree&gt;();</span><br><span class="line">　　　　<span class="keyword">if</span> (p != <span class="keyword">null</span>) &#123;</span><br><span class="line">　　　　　　stack.push(p);</span><br><span class="line">　　　　　　<span class="keyword">while</span> (!stack.empty()) &#123;</span><br><span class="line">　　　　　　　　p = stack.pop();</span><br><span class="line">　　　　　　　　visit(p);</span><br><span class="line">　　　　　　　　<span class="keyword">if</span> (p.getRight() != <span class="keyword">null</span>)</span><br><span class="line">　　　　　　　　　　stack.push(p.getRight());</span><br><span class="line">　　　　　　　　<span class="keyword">if</span> (p.getLeft() != <span class="keyword">null</span>)</span><br><span class="line">　　　　　　　　　　stack.push(p.getLeft());</span><br><span class="line">　　　　　　&#125;</span><br><span class="line">　　　　&#125;</span><br><span class="line">　　&#125;</span><br><span class="line">　　<span class="comment">/** 非递归实现后序遍历 */</span></span><br><span class="line">　　<span class="function"><span class="keyword">protected</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">iterativePostorder</span><span class="params">(BinaryTree p)</span> </span>&#123;</span><br><span class="line">        BinaryTree q = p;</span><br><span class="line">　　　　Stack&lt;BinaryTree&gt; stack = <span class="keyword">new</span> Stack&lt;BinaryTree&gt;();</span><br><span class="line">　　　　<span class="keyword">while</span> (p != <span class="keyword">null</span>) &#123;</span><br><span class="line">　　　　　　<span class="comment">// 左子树入栈</span></span><br><span class="line">　　　　　　<span class="keyword">for</span> (; p.getLeft() != <span class="keyword">null</span>; p = p.getLeft())</span><br><span class="line">　　　　　　　　stack.push(p);</span><br><span class="line">　　　　　　<span class="comment">// 当前节点无右子或右子已经输出</span></span><br><span class="line">　　　　　　<span class="keyword">while</span> (p != <span class="keyword">null</span> &amp;&amp; (p.getRight() == <span class="keyword">null</span> || p.getRight() == q)) &#123;</span><br><span class="line">　　　　　　　　visit(p);</span><br><span class="line">　　　　　　　　q = p;<span class="comment">// 记录上一个已输出节点</span></span><br><span class="line">　　　　　　　　<span class="keyword">if</span> (stack.empty())</span><br><span class="line">　　　　　　　　　　<span class="keyword">return</span>;</span><br><span class="line">　　　　　　　　p = stack.pop();</span><br><span class="line">　　　　　　&#125;</span><br><span class="line">　　　　　　<span class="comment">// 处理右子</span></span><br><span class="line">　　　　　　stack.push(p);</span><br><span class="line">　　　　　　p = p.getRight();</span><br><span class="line">　　　　&#125;</span><br><span class="line">　　&#125;</span><br><span class="line">　　<span class="comment">/** 非递归实现中序遍历 */</span></span><br><span class="line">　　<span class="function"><span class="keyword">protected</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">iterativeInorder</span><span class="params">(BinaryTree p)</span> </span>&#123;</span><br><span class="line">　　　　Stack&lt;BinaryTree&gt; stack = <span class="keyword">new</span> Stack&lt;BinaryTree&gt;();</span><br><span class="line">　　　　<span class="keyword">while</span> (p != <span class="keyword">null</span>) &#123;</span><br><span class="line">　　　　　　<span class="keyword">while</span> (p != <span class="keyword">null</span>) &#123;</span><br><span class="line">　　　　　　　　<span class="keyword">if</span> (p.getRight() != <span class="keyword">null</span>)</span><br><span class="line">　　　　　　　　　　stack.push(p.getRight());<span class="comment">// 当前节点右子入栈</span></span><br><span class="line">　　　　　　　　stack.push(p);<span class="comment">// 当前节点入栈</span></span><br><span class="line">　　　　　　　　p = p.getLeft();</span><br><span class="line">　　　　　　&#125;</span><br><span class="line">　　　　　　p = stack.pop();</span><br><span class="line">　　　　　　<span class="keyword">while</span> (!stack.empty() &amp;&amp; p.getRight() == <span class="keyword">null</span>) &#123;</span><br><span class="line">　　　　　　　　visit(p);</span><br><span class="line">　　　　　　　　p = stack.pop();</span><br><span class="line">　　　　　　&#125;</span><br><span class="line">　　　　　　visit(p);</span><br><span class="line">　　　　　　<span class="keyword">if</span> (!stack.empty())</span><br><span class="line">　　　　　　　　p = stack.pop();</span><br><span class="line">　　　　　　<span class="keyword">else</span></span><br><span class="line">　　　　　　　　p = <span class="keyword">null</span>;</span><br><span class="line">　　　　&#125;</span><br><span class="line">　　&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="求二叉树的深度">求二叉树的深度</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * public class BinaryTree &#123;</span><br><span class="line"> *     Object element;</span><br><span class="line"> *     TreeNode left;</span><br><span class="line"> *     TreeNode right;</span><br><span class="line"> *     </span><br><span class="line"> * &#125;</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">length</span><span class="params">(BinaryTree root)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> leftLength = length(root.left);</span><br><span class="line">        <span class="keyword">int</span> rightLength = length(root.right);</span><br><span class="line">        <span class="keyword">if</span>(leftLength &gt; rightLength)&#123;</span><br><span class="line">            <span class="keyword">return</span> leftLength + <span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> rightLength + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
-      
     </div>
+
     
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://www.tuwaner.com/2015/06/18/二叉树的一些操作/" data-id="cin6s5qja00083kogrdm4smng" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+
+
+    </footer>
   </div>
   
     
-<div class="copyright">
-  <p><span>本文标题:</span><a href="/2015/06/18/二叉树的一些操作/">二叉树的一些操作</a></p>
-  <p><span>文章作者:</span><a href="/about" title="访问 Vincen 的个人博客">Vincen</a></p>
-  <p><span>发布时间:</span>2015年6月18日 - 00时06分</p>
-  <p><span>最后更新:</span>2015年11月4日 - 14时11分</p>
-  <p>
-    <span>原始链接:</span><a href="/2015/06/18/二叉树的一些操作/" title="二叉树的一些操作">http://www.tuwaner.com/2015/06/18/二叉树的一些操作/</a>
-    <span class="btn" data-clipboard-text="原文: http://www.tuwaner.com/2015/06/18/二叉树的一些操作/　　作者: Vincen" title="点击复制文章链接">
-        <i class="fa fa-clipboard"></i>
-    </span>
-  </p>
-  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。</p>
-  <script src="/js/clipboard.min.js"></script>
-  <script> var clipboard = new Clipboard('.btn'); </script>
-</div>
-<style type="text/css">
-  .copyright p .btn {
-    margin-left: 1em;
-  }
-  .copyright:hover p .btn::after {
-    content: "复制"
-  }
-  .copyright p .btn:hover {
-      color: gray;
-      cursor: pointer;
-    };
-</style>
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2014/03/21/Java垃圾收集和内存分配策略/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">Java垃圾收集和内存分配策略</span>
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+    <a href="/2015/08/20/推荐蒋鑫的GotGithub/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">推荐蒋鑫的GotGithub</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
 
-
-
-<nav id="article-nav">
-  
-    <div id="article-nav-newer" class="article-nav-title">
-      <a href="/2015/08/20/推荐蒋鑫的GotGithub/">
-        推荐蒋鑫的GotGithub
-      </a>
-    </div>
-  
-  
-    <div id="article-nav-older" class="article-nav-title">
-      <a href="/2015/04/05/西部游记/">
-        西部游记
-      </a>
-    </div>
-  
-</nav>
 
   
 </article>
 
-<!-- 默认显示文章目录，在文章---前输入toc: false关闭目录 -->
-<!-- Show TOC and tocButton in default, Hide TOC via putting "toc: false" before "---" at [post].md -->
-<div id="toc" class="toc-article">
-<strong class="toc-title">文章目录</strong>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#反转二叉树"><span class="toc-number">1.</span> <span class="toc-text">反转二叉树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#遍历二叉树"><span class="toc-number">2.</span> <span class="toc-text">遍历二叉树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#求二叉树的深度"><span class="toc-number">3.</span> <span class="toc-text">求二叉树的深度</span></a></li></ol>
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>关于</h4>
+  <p>wanglycode@gmail.com</p>
+
 </div>
-<style type="text/css">
-  .left-col .switch-btn {
-    display: none;
-  }
-  .left-col .switch-area {
-    display: none;
-  }
-</style>
-
-<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-<script type="text/javascript">
-  var toc_button= document.getElementById("tocButton");
-  var toc_div= document.getElementById("toc");
-  /* Show or hide toc when click on tocButton.
-  通过点击设置的按钮显示或者隐藏文章目录.*/
-  toc_button.onclick=function(){
-  if(toc_div.style.display=="none"){
-  toc_div.style.display="block";
-  toc_button.value="隐藏目录";
-  document.getElementById("switch-btn").style.display="none";
-  document.getElementById("switch-area").style.display="none";
-  }
-  else{
-  toc_div.style.display="none";
-  toc_button.value="显示目录";
-  document.getElementById("switch-btn").style.display="block";
-  document.getElementById("switch-area").style.display="block";
-  }
-  }
-</script>
-
-
-<div class="share">
-	<div class="bdsharebuttonbox">
-	<a href="#" class="bds_more" data-cmd="more"></a>
-	<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-	<a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
-	<a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
-	<a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
-	<a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
-	</div>
-	<script>
-	window._bd_share_config={
-		"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-	</script>
-</div>
-
-
-
-<div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="2015/06/18/二叉树的一些操作/" data-title="二叉树的一些操作" data-url="http://www.tuwaner.com/2015/06/18/二叉树的一些操作/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"tuwaner"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-
-
-
-
-
-    <style type="text/css">
-    #scroll {
-      display: none;
-    }
-    </style>
-    <div class="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#ds-thread" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
-    </div>
 
 
   
+
+
   
-    
-    <div  class="post-nav-button">
-    <a href="/2015/08/20/推荐蒋鑫的GotGithub/" title="上一篇: 推荐蒋鑫的GotGithub">
-    <i class="fa fa-angle-left"></i>
-    </a>
-    <a href="/2015/04/05/西部游记/" title="下一篇: 西部游记">
-    <i class="fa fa-angle-right"></i>
-    </a>
-    </div>
+  <div class="sidebar-module">
+    <h4>标签</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Github/">Github</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Java/">Java</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/框架/">框架</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/算法/">算法</a><span class="sidebar-module-list-count">4</span></li></ul>
+  </div>
+
+
+
   
-</div>
-      <footer id="footer">
-  <div class="outer">
-    <div id="footer-info">
-      <div class="footer-left">
-        &copy; 2015 Vincen
-      </div>
-        <div class="footer-right">
-          <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的静态博客框架">Hexo</a>  Theme <a href="" target="_blank" title="简而不减双栏 Hexo 博客主题">Yelee</a> by MOxFIVE
+  <div class="sidebar-module">
+    <h4>归档</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/08/">August 2015</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/06/">June 2015</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/03/">March 2014</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2013/11/">November 2013</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2012/03/">March 2012</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2011/08/">August 2011</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2010/11/">November 2010</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+
         </div>
     </div>
-    <div class="visit">
-      <span id="busuanzi_container_site_pv" style='display:none'>
-        <span id="site-visit" >本站到访数: 
-        <span id="busuanzi_value_site_uv"></span>
-        </span>
-      </span>
-      <span id="busuanzi_container_page_pv" style='display:none'>
-        <span id="page-visit">, 本页阅读量: 
-        <span id="busuanzi_value_page_pv"></span>
-        </span>
-      </span>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Vincen<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
-    </div>
-    
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
 
+  
 
-<script>
-	var yiliaConfig = {
-		fancybox: true,
-		mathjax: true,
-		animate: false,
-		isHome: false,
-		isPost: true,
-		isArchive: false,
-		isTag: false,
-		isCategory: false,
-		open_in_new: false
-	}
-</script>
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
 
-<script type="text/javascript">
-  var backgroundList = ["url(/background/bg-1.jpg)", "url(/background/bg-2.jpg)","url(/background/bg-3.jpg)","url(/background/bg-4.jpg)","url(/background/bg-5.jpg)"];
-  var background = Math.floor(Math.random() * backgroundList.length);
-  $("body").css({"background": backgroundList[1], "background-attachment": "fixed", "background-size": "cover"});
-</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 
 
+<script src="/js/script.js" type="text/javascript"></script>
 
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
-
-<div class="scroll" id="scroll">
-<a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-<a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
-</div>
-
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-  </div>
 </body>
 </html>
