@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Draw Image Test</title>
+  <style>
+      body {
+          text-align: center;
+      }
+  </style>
+  <script src="polyfill.js"></script>
+</head>
+<body>
+  <p>下方是通过img标签引入的效果，图片高清显示</p>
+  <img src="1466482688602.jpg" alt="" width="300" height="90">
+
+  <p>下方是canvas中的效果，图片变模糊</p>
+  <canvas width="300" height="90"></canvas>
+
+  <script type="text/javascript" charset="utf-8">
+    function init() {
+      var canvas = document.querySelector('canvas');
+      var ctx = canvas.getContext('2d');
+
+      var getPixelRatio = function(context) {
+        var backingStore = context.backingStorePixelRatio ||
+          context.webkitBackingStorePixelRatio ||
+          context.mozBackingStorePixelRatio ||
+          context.msBackingStorePixelRatio ||
+          context.oBackingStorePixelRatio ||
+          context.backingStorePixelRatio || 1;
+
+        return (window.devicePixelRatio || 1) / backingStore;
+      };
+
+      var ratio = getPixelRatio(ctx);
+      console.log(ratio);
+
+      ctx.drawImage(document.querySelector('img'), 0, 0, 300 * ratio, 90 * ratio);
+    }
+
+    window.onload = init;
+  </script>
+
+  
+</body>
+</html>
