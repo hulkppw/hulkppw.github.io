@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<title>在线JSON格式化</title>
+		<script type='text/javascript' src='json.js'>
+		</script>
+		<script type='text/javascript' src='jquery.min.js'>
+		</script>
+		<script type='text/javascript' src='jquery.json.js'>
+		</script>
+		<script type='text/javascript' src='jsonlint.js'>
+		</script>
+	</head>
+	
+	<body>
+		<span>输入要格式化的JSON：</span>
+		<textarea id='json-src' style="height:253px;width:1860px;padding:0 10px 10px 20px;border-right:solid 1px #ddd;border-bottom:solid 1px #ddd;border-radius:0;resize: none; outline:none;">
+
+</textarea>
+		<div id='json-target'></div>
+	</body>
+	<script type='text/javascript'>
+			$('#json-src').keyup(function(){
+				var content = $.trim($(this).val());
+				var result = '';
+					try{
+						current_json = jsonlint.parse(content);
+						current_json_str = JSON.stringify(current_json);
+						result = new JSONFormat(content,4).toString();
+					}catch(e){
+						result = '<span style="color: #f1592a;font-weight:bold;">' + e + '</span>';
+						current_json_str = result;
+					}
+					$('#json-target').html(result);
+					console.log(123);
+
+			});
+		</script>
+</html>
