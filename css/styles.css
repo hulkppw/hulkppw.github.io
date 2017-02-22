@@ -751,6 +751,14 @@ code {
   text-decoration: none;
 }
 
+.archive-article {
+  margin: 20px 0;
+}
+.archive-article h2 {
+  margin: 0;
+  font-size: 1em;
+}
+
 /*
  * Pagination
  */
