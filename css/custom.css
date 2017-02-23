@@ -153,7 +153,7 @@ code {
  */
 
 .blog-main {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.5;
 }
 .blog-main > article:last-of-type {
@@ -197,14 +197,14 @@ code {
   margin-bottom: 60px;
 }
 
-.article-header h2 {
+.article-header h3 {
   margin-top: 0;
   margin-bottom: 5px;
 }
-.article-header h2 a {
+.article-header h3 a {
   color: #333;
 }
-.article-header h2 a:hover {
+.article-header h3 a:hover {
   color: #23527c;
   text-decoration: none;
 }
