@@ -13,7 +13,7 @@
 <meta property="og:site_name">
 <meta property="og:description" content="垃圾收集判断对象是否存活的算法常用的有两种:1.引用计数算法，给对象添加一个引用计数器，每次对象被引用的时候，计数器的值就加1；引用失效时，计数器值减1，当计数器的值都为0的对象就是不再被引用的。优点：实现简单，判定效率高缺点：对象之间互相循环引用的情况
 2.根搜索算法，通过一系列的“GC Roots”对象作为起始点，从这些节点开始向下搜索，搜索所走的路径成为引用链（Reference Chain">
-<meta property="og:updated_time" content="2016-05-15T10:27:12.000Z">
+<meta property="og:updated_time" content="2017-02-23T00:45:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java垃圾收集和内存分配策略">
 <meta name="twitter:description" content="垃圾收集判断对象是否存活的算法常用的有两种:1.引用计数算法，给对象添加一个引用计数器，每次对象被引用的时候，计数器的值就加1；引用失效时，计数器值减1，当计数器的值都为0的对象就是不再被引用的。优点：实现简单，判定效率高缺点：对象之间互相循环引用的情况
@@ -109,7 +109,7 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="垃圾收集">垃圾收集</h2><p>判断对象是否存活的算法常用的有两种:<br>1.引用计数算法，给对象添加一个引用计数器，每次对象被引用的时候，计数器的值就加1；引用失效时，计数器值减1，当计数器的值都为0的对象就是不再被引用的。<br>优点：实现简单，判定效率高<br>缺点：对象之间互相循环引用的情况</p>
+        <h4 id="垃圾收集">垃圾收集</h4><p>判断对象是否存活的算法常用的有两种:<br>1.引用计数算法，给对象添加一个引用计数器，每次对象被引用的时候，计数器的值就加1；引用失效时，计数器值减1，当计数器的值都为0的对象就是不再被引用的。<br>优点：实现简单，判定效率高<br>缺点：对象之间互相循环引用的情况</p>
 <p>2.根搜索算法，通过一系列的“GC Roots”对象作为起始点，从这些节点开始向下搜索，搜索所走的路径成为引用链（Reference Chain)，当一个对象到GC Roots没有任何引用链相连时，则证明此对象是不可用的。<br>垃圾收集算法<br><a id="more"></a><br>1.标记-清除算法（Mark-Sweep）<br>这是最基础的收集算法，该算法包括两个阶段“标记”和“清除”。首先，标记出所有需要收集的对象，在标记完成之后，统一回收所有标记的对象。<br>缺点：a.效率低<br>      b.空间问题，这主要是因为，标记清楚之后会产生大量不连续的内存碎片，空间碎片太多可能会导致，当程序在以后的运行过程中需要分配较大对象时无法找到足够的连续内存而不得不以前出发下一次垃圾收集动作。<br>2.复制算法<br>思想：将内存容量划分为大小相同的两块，每次只使用其中的一块。当这一块的内存用完了，就将还存活的复制到另外一块内存上面，然后再把已使用过的内存空间一次清理掉。这样每次都是对其中的一块进行内存回收，就解决了内存碎片的问题。但是突出的问题还是很明显，就是会有大量的内存空间处于闲置状态，降低了内存的使用率。后来商业虚拟机进行了优化，那就是将内存分为一块较大的Eden空间和两块较小的Survivor空间，每次使用Eden和其中的一块Survivor。每当回收时，就将Eden和Survivor中还存活着的对象一次性的拷贝到另外一块Survivor空间上，然后清理掉Eden和刚才用过的Survivor的空间。具体Eden和Survivor的分配比例，可能因不同的生产商而不同，例如HotSpot虚拟机默认Eden和Survivor的大小笔记是8:1。但是，问题紧接着而来，那就是当备用的Survivor空间不够用时，就需要依赖其他内存进行分配担保。<br>3.标记-整理算法<br>将存活下来的对象标记为老年代，然后标记，但是不是直接对可回收对象进行清理，而是让所有存活的对象都想一段移动，然后直接清理掉端边界以外的内存。<br>4.分代收集算法<br>思想：根据对象的存活周期的不同，将内存划分为几块。一般是把Java堆分为新生代和老年代，这样根据各个年代对象的特点采用适当的收集算法。新生代中，内次垃圾收集时都发现大批对象死去，只有少量存活，那就选择复制算法。老年代中因为对象存活率高、没有额外空间对他进行分配担保，就必须使用“标记-清理”活“标记-整理”算法收集。</p>
 <h2 id="内存分配和回收">内存分配和回收</h2><p>1.对象优先在Eden分配<br>大多数情况下，对象在新生代Eden区中分配。当Eden区没有足够的空间进行分配时，虚拟机将发起一次Minor GC。<br>tip:Minor GC和Full GC的区别<br>新生代GC（Minor GC）：指发生在新生代的垃圾收集动作，因为Java对象大多都具备朝生夕灭的特性，所以Minor GC非常频繁，一般回收速度也比较快。<br>老年代GC（Major GC/Full GC）：指发生在老年代的GC，出席那了Major GC，经常会伴随至少一次的Minor GC(但非绝对的，在ParallelScavenge收集器的收集策略里就有直接进行Major GC的策略选择过程)。Major GC的速度一般会比Minor GC慢10倍以上。</p>
 <p>2.大对象直接进入老年代<br>所谓的大对象就是指，需要大量连续内存空间的Java对象，最典型的大对象就是那种很长的字符串及数组。大对象对虚拟机的内存分配来说就是一个坏消息，经常出现大对象容易导致内存还有不少空间时，就提前触发垃圾收集以获取足够的连续空间来“安置”它们。<br>3.长期存活的对象将进入老年代<br>虚拟机通过给每个对象定义一个对象年龄计数器，来识别那些对象放在新生代，哪些放在老年代。如果对象在Eden出生并经过第一次Minor GC后仍然存活，并且能被Survivor容纳的话，将被异动到Survivor空间中，并将对象年龄设为1。对象每经过一次Minor GC，年龄就增加1，当它的年龄增加到一定程度（默认为15岁）时，就会被晋升到老年代中。对象晋升老年代的年龄阈值，可以通过参数-XX:MaxTenuringThreshold来设置。<br>4.动态对象年龄判定<br>为了能更好地适应不同程序的内存状况，虚拟机并不总是要求对象的年龄必须达到MaxTenuringThreshold才能晋升老年代，吐过在Survivor空间中相同年龄所有对象大小的总和大于Survivor空间的一般，年龄大于或等于该年龄的对象就可以直接进入老年代，无需等到MaxTenuringThreshold中要求的年龄。<br>5.空间分配担保<br>新生代使用复制收集算法，但为了内存利用率，只使用其中一个Survivor空间来作为轮换备份，因此当出现大量对象在Minor GC后仍然存活的情况时，就需要老年代进行分配担保，让Survivor无法容纳的对象直接进入老年代。老年代要进行这样的担保，前提是老年代本身还有容纳这些对象的剩余空间，一共有多少对象会或下来，在实际完成内存回收执勤是无法明确知道的，所以只好取之前每一次回收晋升到老年代对象容量的平均大小值作为经验值，与老年代的剩余空间进行比较，决定是否进行FullGC来让老年代腾出更多空间。</p>
@@ -124,7 +124,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://www.tuwaner.com/2014/03/21/Java垃圾收集和内存分配策略/" data-id="cizhn34bv000m6os6ghp8p8ws" class="article-share-link">
+      <a data-url="http://www.tuwaner.com/2014/03/21/Java垃圾收集和内存分配策略/" data-id="cizho4410000mmus6cuiknpc2" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -178,7 +178,7 @@
   
   <div class="sidebar-module">
     <h4>标签</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Github/">Github</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Java/">Java</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/框架/">框架</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/算法/">算法</a><span class="sidebar-module-list-count">4</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Github/">Github</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Java/">Java</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/框架/">框架</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/算法/">算法</a><span class="sidebar-module-list-count">4</span></li></ul>
   </div>
 
 
@@ -186,7 +186,7 @@
   
   <div class="sidebar-module">
     <h4>归档</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/08/">August 2015</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/06/">June 2015</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/03/">March 2014</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2013/11/">November 2013</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2012/03/">March 2012</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2011/08/">August 2011</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2010/11/">November 2010</a><span class="sidebar-module-list-count">1</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/05/">May 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">February 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/08/">August 2015</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/06/">June 2015</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/03/">March 2014</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2013/11/">November 2013</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2012/03/">March 2012</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2011/08/">August 2011</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2010/11/">November 2010</a><span class="sidebar-module-list-count">1</span></li></ul>
   </div>
 
 
