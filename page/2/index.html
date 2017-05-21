@@ -82,13 +82,13 @@
           
   
   	
-<article id="post-最大子序列和" class="article article-type-post" itemscope itemprop="blogPost">
+<article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h3 itemprop="name">
-      <a class="article-title" href="/2011/08/13/最大子序列和/">求最大子序列和的问题</a>
+      <a class="article-title" href="/2010/11/11/hello-world/">Hello World</a>
     </h3>
   
 
@@ -97,7 +97,7 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2011/08/13/最大子序列和/" class="article-date"><time datetime="2011-08-12T16:00:00.000Z" itemprop="datePublished">2011-08-13</time></a>
+  <a href="/2010/11/11/hello-world/" class="article-date"><time datetime="2010-11-10T16:00:00.000Z" itemprop="datePublished">2010-11-11</time></a>
 </div>
 
     
@@ -108,11 +108,13 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>问题：给定（可能有负数）整数A1，A2，…，An，求∑Ak的最大值。（所有整数均为负数，则最大子序列和为0）。</p>
-<p>1.穷举法<br>这种算法就是穷举所有的可能。for循环中的循环变量反映了Java中数组从0开始而不是从1开始这样一个事实。还有，本算法并不计算实际的子序列；实际的计算还要添加一些额外的代码。这个算法的运行时间为O(N3)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">maxSubSum1</span><span class="params">(<span class="keyword">int</span>[] a)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> maxSum = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a.length; i++)</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; a.length; j++)&#123;</span><br><span class="line">			<span class="keyword">int</span> thisSum = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> k = i; k &lt;= j; k++)</span><br><span class="line">				thisSum += a[k];</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span>(thisSum &gt; maxSum)</span><br><span class="line">				maxSum = thisSum;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> maxSum;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>Welcome to <a href="http://hexo.io/">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
         
           <p class="article-more-link">
-            <a class="btn btn-primary" href="/2011/08/13/最大子序列和/#more">更多...</a>
+            <a class="btn btn-primary" href="/2010/11/11/hello-world/#more">更多...</a>
           </p>
         
       
@@ -121,16 +123,16 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://www.tuwaner.com/2011/08/13/最大子序列和/" data-id="cizho440i0005mus6pqssq0y5" class="article-share-link">
+      <a data-url="http://www.tuwaner.com/2010/11/11/hello-world/" data-id="cizho440u000hmus6idan52h1" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
-        <a href="http://www.tuwaner.com/2011/08/13/最大子序列和/#disqus_thread" class="article-comment-link">
+        <a href="http://www.tuwaner.com/2010/11/11/hello-world/#disqus_thread" class="article-comment-link">
           <i class="fa fa-comment"></i> Comments
         </a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
 
 
     </footer>
@@ -143,19 +145,12 @@
   	
     
   
-  	
-    
-  
   
   <div id="recent_posts" class="archives-wrap">
     
   <div class="sidebar-module">
     <h3>最新文章</h3>
     <ul class="sidebar-module-list">
-      
-        <li>
-          <a href="/2017/05/19/创建GitHub公钥/">如何创建Github公钥</a>
-        </li>
       
         <li>
           <a href="/2017/05/19/如何创建GitHub公钥/">如何创建Github公钥</a>
@@ -171,6 +166,10 @@
       
         <li>
           <a href="/2015/06/18/二叉树的一些操作/">二叉树的一些操作</a>
+        </li>
+      
+        <li>
+          <a href="/2014/03/21/Java垃圾收集和内存分配策略/">Java垃圾收集和内存分配策略</a>
         </li>
       
     </ul>
@@ -198,7 +197,7 @@
   
   <div class="sidebar-module">
     <h4>标签</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Github/">Github</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Java/">Java</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/框架/">框架</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/算法/">算法</a><span class="sidebar-module-list-count">4</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Github/">Github</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Java/">Java</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/框架/">框架</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/算法/">算法</a><span class="sidebar-module-list-count">4</span></li></ul>
   </div>
 
 
@@ -206,7 +205,7 @@
   
   <div class="sidebar-module">
     <h4>归档</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/05/">May 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">February 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/08/">August 2015</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/06/">June 2015</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/03/">March 2014</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2013/11/">November 2013</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2012/03/">March 2012</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2011/08/">August 2011</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2010/11/">November 2010</a><span class="sidebar-module-list-count">1</span></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/05/">May 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">February 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/08/">August 2015</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/06/">June 2015</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/03/">March 2014</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2013/11/">November 2013</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2012/03/">March 2012</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2011/08/">August 2011</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2010/11/">November 2010</a><span class="sidebar-module-list-count">1</span></li></ul>
   </div>
 
 
