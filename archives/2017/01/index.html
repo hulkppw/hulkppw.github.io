@@ -3,24 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>如何创建Github公钥 | </title>
+  <title>Archives: 2017/1 | </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.打开终端，Windows用户打开Git Bash
-2.执行：
-1&amp;gt; cd ~/.ssh">
-<meta property="og:type" content="article">
-<meta property="og:title" content="如何创建Github公钥">
-<meta property="og:url" content="http://www.tuwaner.com/2017/05/19/如何创建GitHub公钥/index.html">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title">
+<meta property="og:url" content="http://www.tuwaner.com/archives/2017/01/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="1.打开终端，Windows用户打开Git Bash
-2.执行：
-1&amp;gt; cd ~/.ssh">
-<meta property="og:updated_time" content="2017-12-12T14:49:03.000Z">
+<meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何创建Github公钥">
-<meta name="twitter:description" content="1.打开终端，Windows用户打开Git Bash
-2.执行：
-1&amp;gt; cd ~/.ssh">
+<meta name="twitter:title">
+<meta name="twitter:description">
   
     <link rel="alternate" href="/atom.xml" title="" type="application/atom+xml">
   
@@ -59,7 +52,7 @@
           <li><a class=""
                  href="/index.html">首页</a></li>
         
-          <li><a class=""
+          <li><a class="active"
                  href="/archives/">目录</a></li>
         
           <li><a class=""
@@ -86,91 +79,39 @@
 
     <div class="row">
         <div class="col-sm-8 blog-main">
-          <article id="post-如何创建GitHub公钥" class="article article-type-post" itemscope itemprop="blogPost">
-
-  <header class="article-header">
+          
+  
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  
     
   
-    <h3 class="article-title" itemprop="name">
-      如何创建Github公钥
+    <h3 itemprop="name">
+      <a class="archive-article-title" href="/2017/01/23/Name 域名注册续费优惠码/">Name.com 域名注册/续费优惠码</a>
     </h3>
   
-
-
-  </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/2017/05/19/如何创建GitHub公钥/" class="article-date"><time datetime="2017-05-18T16:00:00.000Z" itemprop="datePublished">2017-05-19</time></a>
-</div>
-
-    
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1.打开终端，Windows用户打开Git Bash</p>
-<p>2.执行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="built_in">cd</span> ~/.ssh</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>3.生成新的 SSH KEY：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ssh-keygen -t rsa -C <span class="string">"emailaddress@email.com"</span></span><br></pre></td></tr></table></figure>
-<p>控制台输出：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/vincen/.ssh/id_rsa):</span><br></pre></td></tr></table></figure></p>
-<p>直接回车，不要修改默认路劲。</p>
-<p>提示让输入每次远程操作之前都会要求输入的密码！可以不用输入，直接两次回车：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; Enter passphrase (empty <span class="keyword">for</span> no passphrase): </span><br><span class="line">Enter same passphrase again:</span><br></pre></td></tr></table></figure></p>
-<p>4.生成完毕<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; Your identification has been saved <span class="keyword">in</span> /Users/vincen/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /Users/vincen/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br></pre></td></tr></table></figure></p>
-<p>5.添加公钥到GitHub<br>找到.ssh文件夹，用文本编辑器打开“id_rsa.pub”文件，复制内容到剪贴板。<br>打开 <a href="https://github.com/settings/ssh" target="_blank" rel="external">https://github.com/settings/ssh</a> ，点击 Add SSH Key 按钮，粘贴进去保存即可。</p>
-
-      
-    </div>
-
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://www.tuwaner.com/2017/05/19/如何创建GitHub公钥/" data-id="cjb3rda7b000a3hs6m6jmfb79" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-        <a href="http://www.tuwaner.com/2017/05/19/如何创建GitHub公钥/#disqus_thread" class="article-comment-link">
-          <i class="fa fa-comment"></i> Comments
-        </a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li></ul>
-
-
-    </footer>
-  </div>
-  
-    
-<ul id="article-nav" class="nav nav-pills nav-justified">
-  
-  <li role="presentation">
-    <a href="/2017/02/20/String StringBuilder StringBuffer的异同/" id="article-nav-older" class="article-nav-link-wrap">
-      <i class="fa fa-chevron-left pull-left"></i>
-      <span class="article-nav-link-title">String StringBuilder StringBuffer的异同</span>
-    </a>
-  </li>
-  
-  
-</ul>
 
 
   
 </article>
 
-
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
+  
+    </div></section>
+  
+  
+  <div id="page-nav">
+    <nav><ul class="pagination"><li class="disabled"><span class="page-prev"><i class="fa fa-chevron-left"></i> 上一页</a></li><li class="active"><span class="page-number">1</span></li><li class="disabled"><span class="page-next">下一页 <i class="fa fa-chevron-right"></i></a></li></ul></nav>
   </div>
-</section>
+
+
 
 
 
@@ -220,13 +161,11 @@
 <script>
   var disqus_shortname = 'tuwaner';
   
-  var disqus_url = 'http://www.tuwaner.com/2017/05/19/如何创建GitHub公钥/';
-  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
