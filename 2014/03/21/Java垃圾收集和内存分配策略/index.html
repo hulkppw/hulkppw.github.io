@@ -13,7 +13,7 @@
 <meta property="og:site_name">
 <meta property="og:description" content="垃圾收集判断对象是否存活的算法常用的有两种:1.引用计数算法，给对象添加一个引用计数器，每次对象被引用的时候，计数器的值就加1；引用失效时，计数器值减1，当计数器的值都为0的对象就是不再被引用的。优点：实现简单，判定效率高缺点：对象之间互相循环引用的情况
 2.根搜索算法，通过一系列的“GC Roots”对象作为起始点，从这些节点开始向下搜索，搜索所走的路径成为引用链（Reference Chain">
-<meta property="og:updated_time" content="2017-12-12T14:49:03.000Z">
+<meta property="og:updated_time" content="2017-12-13T02:52:39.797Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java垃圾收集和内存分配策略">
 <meta name="twitter:description" content="垃圾收集判断对象是否存活的算法常用的有两种:1.引用计数算法，给对象添加一个引用计数器，每次对象被引用的时候，计数器的值就加1；引用失效时，计数器值减1，当计数器的值都为0的对象就是不再被引用的。优点：实现简单，判定效率高缺点：对象之间互相循环引用的情况
@@ -32,6 +32,19 @@
 
   <link rel="stylesheet" href="/css/styles.css" type="text/css">
   
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-62252110-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
 
 </head>
 
@@ -82,7 +95,7 @@
 </div>
 
     <div class="row">
-        <div class="col-sm-8 blog-main">
+        <div class="col-sm-12 blog-main">
           <article id="post-Java垃圾收集和内存分配策略" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
@@ -124,7 +137,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://www.tuwaner.com/2014/03/21/Java垃圾收集和内存分配策略/" data-id="cjb3rda7x000t3hs6r2krj6c2" class="article-share-link">
+      <a data-url="http://www.tuwaner.com/2014/03/21/Java垃圾收集和内存分配策略/" data-id="cjb4stcrv000tzk04rh5lapql" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -164,20 +177,33 @@
 </article>
 
 
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
+  
+  <!-- Gitment���۲��ͨ�ô��� -->
+<div id="git"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: 'hulkppw',
+  repo: 'hulkppw.github.io',
+  oauth: {
+    client_id: '2dcdb759219753da967a',
+	client_secret: '9630f1bd762b309724ae1d338aa0bc30fda45810'
+  }
+})
+gitment.render('git')
+</script>
+<!-- Gitment������� -->
+  
 
 
 
         </div>
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+        <!--<div class="col-sm-2 blog-sidebar">
           
   <div class="sidebar-module sidebar-module-inset">
   <h4>关于</h4>
-  <p>wanglycode@gmail.com</p>
+  #<p>wanglycode@gmail.com</p>
 
 </div>
 
@@ -202,7 +228,7 @@
 
 
 
-        </div>
+        </div>-->
     </div>
   </div>
   <footer class="blog-footer">

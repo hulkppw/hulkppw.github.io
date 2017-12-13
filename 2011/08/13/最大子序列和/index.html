@@ -13,7 +13,7 @@
 <meta property="og:site_name">
 <meta property="og:description" content="问题：给定（可能有负数）整数A1，A2，…，An，求∑Ak的最大值。（所有整数均为负数，则最大子序列和为0）。
 1.穷举法这种算法就是穷举所有的可能。for循环中的循环变量反映了Java中数组从0开始而不是从1开始这样一个事实。还有，本算法并不计算实际的子序列；实际的计算还要添加一些额外的代码。这个算法的运行时间为O(N3)12345678910111213public static int ma">
-<meta property="og:updated_time" content="2016-05-15T10:27:12.000Z">
+<meta property="og:updated_time" content="2017-12-13T02:52:39.802Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="求最大子序列和的问题">
 <meta name="twitter:description" content="问题：给定（可能有负数）整数A1，A2，…，An，求∑Ak的最大值。（所有整数均为负数，则最大子序列和为0）。
@@ -32,6 +32,19 @@
 
   <link rel="stylesheet" href="/css/styles.css" type="text/css">
   
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-62252110-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
 
 </head>
 
@@ -82,7 +95,7 @@
 </div>
 
     <div class="row">
-        <div class="col-sm-8 blog-main">
+        <div class="col-sm-12 blog-main">
           <article id="post-最大子序列和" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
@@ -127,7 +140,7 @@
     
 
     <footer class="article-footer">
-      <a data-url="http://www.tuwaner.com/2011/08/13/最大子序列和/" data-id="cjb3rda7700053hs6or89q46b" class="article-share-link">
+      <a data-url="http://www.tuwaner.com/2011/08/13/最大子序列和/" data-id="cjb4stcr80005zk04jqn3z5s6" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -167,20 +180,33 @@
 </article>
 
 
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
+  
+  <!-- Gitment���۲��ͨ�ô��� -->
+<div id="git"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: 'hulkppw',
+  repo: 'hulkppw.github.io',
+  oauth: {
+    client_id: '2dcdb759219753da967a',
+	client_secret: '9630f1bd762b309724ae1d338aa0bc30fda45810'
+  }
+})
+gitment.render('git')
+</script>
+<!-- Gitment������� -->
+  
 
 
 
         </div>
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+        <!--<div class="col-sm-2 blog-sidebar">
           
   <div class="sidebar-module sidebar-module-inset">
   <h4>关于</h4>
-  <p>wanglycode@gmail.com</p>
+  #<p>wanglycode@gmail.com</p>
 
 </div>
 
@@ -205,7 +231,7 @@
 
 
 
-        </div>
+        </div>-->
     </div>
   </div>
   <footer class="blog-footer">
