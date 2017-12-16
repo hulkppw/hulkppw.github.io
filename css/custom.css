@@ -55,7 +55,9 @@ code {
 /* Override Bootstrap's default container width */
 @media (min-width: 1200px) {
   .container {
-    width: 50%;
+    width: 65%;
+    min-width:640px;
+    max-width:960px;
   }
 }
 
@@ -309,4 +311,22 @@ code {
 }
 .blog-footer p:last-child {
   margin-bottom: 0;
+}
+
+div.entry-location{
+  border-radius: 15px;
+  background-color:#a7d1f1;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+div.entry-location li{
+  display:block;
+  list-style-type: none; 
+}
+
+div.entry-location a{
+       color:#556677;
+       text-decoration:underline;
+       font-size:95%;
 }

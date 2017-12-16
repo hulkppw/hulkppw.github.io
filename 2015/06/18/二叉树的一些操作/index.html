@@ -13,7 +13,7 @@
 <meta property="og:site_name">
 <meta property="og:description" content="反转二叉树前一段时间国外某大牛面试Google被刷掉，原因是没有能够徒手写出来反转二叉树的代码，在网上看到了一个人的分析代码，特此记下来。
 1234567891011121314151617181920212223/** * Definition for a binary tree node. * public class TreeNode &amp;#123; *     int val; *">
-<meta property="og:updated_time" content="2017-12-13T02:52:39.801Z">
+<meta property="og:updated_time" content="2017-12-16T14:06:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="二叉树的一些操作">
 <meta name="twitter:description" content="反转二叉树前一段时间国外某大牛面试Google被刷掉，原因是没有能够徒手写出来反转二叉树的代码，在网上看到了一个人的分析代码，特此记下来。
@@ -130,21 +130,14 @@
 <h4 id="求二叉树的深度">求二叉树的深度</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * public class BinaryTree &#123;</span><br><span class="line"> *     Object element;</span><br><span class="line"> *     TreeNode left;</span><br><span class="line"> *     TreeNode right;</span><br><span class="line"> *     </span><br><span class="line"> * &#125;</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">length</span><span class="params">(BinaryTree root)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> leftLength = length(root.left);</span><br><span class="line">        <span class="keyword">int</span> rightLength = length(root.right);</span><br><span class="line">        <span class="keyword">if</span>(leftLength &gt; rightLength)&#123;</span><br><span class="line">            <span class="keyword">return</span> leftLength + <span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> rightLength + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
-
     
       
 
     
-
     <footer class="article-footer">
-      <a data-url="http://www.tuwaner.com/2015/06/18/二叉树的一些操作/" data-id="cjb4stcrh000fzk045vd45fvd" class="article-share-link">
+      <a data-url="http://www.tuwaner.com/2015/06/18/二叉树的一些操作/" data-id="cjb9gdc1n000fh2s6vy0hvhb2" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
-      
-        <a href="http://www.tuwaner.com/2015/06/18/二叉树的一些操作/#disqus_thread" class="article-comment-link">
-          <i class="fa fa-comment"></i> Comments
-        </a>
-      
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
 
@@ -153,24 +146,26 @@
   </div>
   
     
-<ul id="article-nav" class="nav nav-pills nav-justified">
+<div class="entry-location">
+  <ul id="article-nav">
   
   <li role="presentation">
-    <a href="/2014/03/21/Java垃圾收集和内存分配策略/" id="article-nav-older" class="article-nav-link-wrap">
-      <i class="fa fa-chevron-left pull-left"></i>
-      <span class="article-nav-link-title">Java垃圾收集和内存分配策略</span>
+  <span style="">上一篇：</span>
+    <a href="/2014/03/21/Java垃圾收集和内存分配策略/" id="article-nav-older">
+      Java垃圾收集和内存分配策略
     </a>
   </li>
   
   
   <li role="presentation">
-    <a href="/2015/08/20/推荐蒋鑫的GotGithub/" id="article-nav-newer" class="article-nav-link-wrap">
-      <span class="article-nav-link-title">推荐蒋鑫的GotGithub</span>
-      <i class="fa fa-chevron-right pull-right"></i>
+  <span>下一篇：</span>
+    <a href="/2015/08/20/推荐蒋鑫的GotGithub/" id="article-nav-newer">
+      推荐蒋鑫的GotGithub
     </a>
   </li>
   
 </ul>
+</div>
 
 
   
@@ -178,7 +173,7 @@
 
 
   
-  <!-- Gitment���۲��ͨ�ô��� -->
+  <!-- Gitment���۲���ͨ�ô��� -->
 <div id="git"></div>
 <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
@@ -193,7 +188,7 @@ var gitment = new Gitment({
 })
 gitment.render('git')
 </script>
-<!-- Gitment������� -->
+<!-- Gitment�������� -->
   
 
 

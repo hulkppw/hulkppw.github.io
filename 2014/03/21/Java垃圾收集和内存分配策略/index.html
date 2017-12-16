@@ -13,7 +13,7 @@
 <meta property="og:site_name">
 <meta property="og:description" content="垃圾收集判断对象是否存活的算法常用的有两种:1.引用计数算法，给对象添加一个引用计数器，每次对象被引用的时候，计数器的值就加1；引用失效时，计数器值减1，当计数器的值都为0的对象就是不再被引用的。优点：实现简单，判定效率高缺点：对象之间互相循环引用的情况
 2.根搜索算法，通过一系列的“GC Roots”对象作为起始点，从这些节点开始向下搜索，搜索所走的路径成为引用链（Reference Chain">
-<meta property="og:updated_time" content="2017-12-13T02:52:39.797Z">
+<meta property="og:updated_time" content="2017-12-12T14:49:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java垃圾收集和内存分配策略">
 <meta name="twitter:description" content="垃圾收集判断对象是否存活的算法常用的有两种:1.引用计数算法，给对象添加一个引用计数器，每次对象被引用的时候，计数器的值就加1；引用失效时，计数器值减1，当计数器的值都为0的对象就是不再被引用的。优点：实现简单，判定效率高缺点：对象之间互相循环引用的情况
@@ -130,21 +130,14 @@
 
       
     </div>
-
     
       
 
     
-
     <footer class="article-footer">
-      <a data-url="http://www.tuwaner.com/2014/03/21/Java垃圾收集和内存分配策略/" data-id="cjb4stcrv000tzk04rh5lapql" class="article-share-link">
+      <a data-url="http://www.tuwaner.com/2014/03/21/Java垃圾收集和内存分配策略/" data-id="cjb9gdc24000th2s6cm4ushqr" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
-      
-        <a href="http://www.tuwaner.com/2014/03/21/Java垃圾收集和内存分配策略/#disqus_thread" class="article-comment-link">
-          <i class="fa fa-comment"></i> Comments
-        </a>
-      
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
 
@@ -153,24 +146,26 @@
   </div>
   
     
-<ul id="article-nav" class="nav nav-pills nav-justified">
+<div class="entry-location">
+  <ul id="article-nav">
   
   <li role="presentation">
-    <a href="/2013/11/17/关于Java的一些基础知识/" id="article-nav-older" class="article-nav-link-wrap">
-      <i class="fa fa-chevron-left pull-left"></i>
-      <span class="article-nav-link-title">关于Java技术的一些理解</span>
+  <span style="">上一篇：</span>
+    <a href="/2013/11/17/关于Java的一些基础知识/" id="article-nav-older">
+      关于Java技术的一些理解
     </a>
   </li>
   
   
   <li role="presentation">
-    <a href="/2015/06/18/二叉树的一些操作/" id="article-nav-newer" class="article-nav-link-wrap">
-      <span class="article-nav-link-title">二叉树的一些操作</span>
-      <i class="fa fa-chevron-right pull-right"></i>
+  <span>下一篇：</span>
+    <a href="/2015/06/18/二叉树的一些操作/" id="article-nav-newer">
+      二叉树的一些操作
     </a>
   </li>
   
 </ul>
+</div>
 
 
   
@@ -178,7 +173,7 @@
 
 
   
-  <!-- Gitment���۲��ͨ�ô��� -->
+  <!-- Gitment���۲���ͨ�ô��� -->
 <div id="git"></div>
 <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
@@ -193,7 +188,7 @@ var gitment = new Gitment({
 })
 gitment.render('git')
 </script>
-<!-- Gitment������� -->
+<!-- Gitment�������� -->
   
 
 
