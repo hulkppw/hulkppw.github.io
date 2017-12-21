@@ -491,8 +491,10 @@
 
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
-  color: #555;
-  background-color: #F5F5D5;
+  /*color: #555;*/
+  color: #000;
+  /*background-color: #F5F5D5;*/
+  background-color: #ffffff;
 }
 
 h1, .h1,
@@ -785,7 +787,8 @@ code {
   padding: 40px 0;
   color: #999;
   text-align: center;
-  background-color: #F5F5D5;
+  /*background-color: #F5F5D5;*/
+  background-color: #ffffff;
   border-top: 1px solid #e5e5e5;
 }
 .blog-footer p:last-child {
@@ -808,5 +811,8 @@ div.entry-location a{
        color:#556677;
        text-decoration:underline;
        font-size:95%;
+}
+a{
+	color: #333;
 }
 
