@@ -3,24 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>如何创建Github公钥 | </title>
+  <title>Vultr注册通道 | </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.打开终端，Windows用户打开Git Bash
-2.执行：
-1&amp;gt; cd ~/.ssh">
+  <meta name="description" content="今天给大家推荐一款性价比较高的VPS主机-Vultr，目前商家推出了最低2.5$/月
+新用户注册VULTR账户入口 注册直达通道：新用户注册VULTR账号直达链接（目前支持支付宝付款）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何创建Github公钥">
-<meta property="og:url" content="http://www.tuwaner.com/2017/05/19/如何创建GitHub公钥/index.html">
+<meta property="og:title" content="Vultr注册通道">
+<meta property="og:url" content="http://www.tuwaner.com/2017/12/21/Vultr注册/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="1.打开终端，Windows用户打开Git Bash
-2.执行：
-1&amp;gt; cd ~/.ssh">
-<meta property="og:updated_time" content="2017-12-13T02:52:39.802Z">
+<meta property="og:description" content="今天给大家推荐一款性价比较高的VPS主机-Vultr，目前商家推出了最低2.5$/月
+新用户注册VULTR账户入口 注册直达通道：新用户注册VULTR账号直达链接（目前支持支付宝付款）">
+<meta property="og:image" content="http://www.tuwaner.com/images/_20171221180139.png">
+<meta property="og:updated_time" content="2017-12-21T10:19:54.697Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何创建Github公钥">
-<meta name="twitter:description" content="1.打开终端，Windows用户打开Git Bash
-2.执行：
-1&amp;gt; cd ~/.ssh">
+<meta name="twitter:title" content="Vultr注册通道">
+<meta name="twitter:description" content="今天给大家推荐一款性价比较高的VPS主机-Vultr，目前商家推出了最低2.5$/月
+新用户注册VULTR账户入口 注册直达通道：新用户注册VULTR账号直达链接（目前支持支付宝付款）">
   
     <link rel="alternate" href="/atom.xml" title="" type="application/atom+xml">
   
@@ -99,13 +97,13 @@
 
     <div class="row">
         <div class="col-sm-12 blog-main">
-          <article id="post-如何创建GitHub公钥" class="article article-type-post" itemscope itemprop="blogPost">
+          <article id="post-Vultr注册" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h3 class="article-title" itemprop="name">
-      如何创建Github公钥
+      Vultr注册通道
     </h3>
   
 
@@ -114,7 +112,7 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2017/05/19/如何创建GitHub公钥/" class="article-date"><time datetime="2017-05-18T16:00:00.000Z" itemprop="datePublished">2017-05-19</time></a>
+  <a href="/2017/12/21/Vultr注册/" class="article-date"><time datetime="2017-12-20T16:00:00.000Z" itemprop="datePublished">2017-12-21</time></a>
 </div>
 
     
@@ -125,17 +123,8 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1.打开终端，Windows用户打开Git Bash</p>
-<p>2.执行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="built_in">cd</span> ~/.ssh</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>3.生成新的 SSH KEY：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; ssh-keygen -t rsa -C <span class="string">"emailaddress@email.com"</span></span><br></pre></td></tr></table></figure>
-<p>控制台输出：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/vincen/.ssh/id_rsa):</span><br></pre></td></tr></table></figure></p>
-<p>直接回车，不要修改默认路劲。</p>
-<p>提示让输入每次远程操作之前都会要求输入的密码！可以不用输入，直接两次回车：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; Enter passphrase (empty <span class="keyword">for</span> no passphrase): </span><br><span class="line">Enter same passphrase again:</span><br></pre></td></tr></table></figure></p>
-<p>4.生成完毕<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; Your identification has been saved <span class="keyword">in</span> /Users/vincen/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /Users/vincen/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br></pre></td></tr></table></figure></p>
-<p>5.添加公钥到GitHub<br>找到.ssh文件夹，用文本编辑器打开“id_rsa.pub”文件，复制内容到剪贴板。<br>打开 <a href="https://github.com/settings/ssh" target="_blank" rel="external">https://github.com/settings/ssh</a> ，点击 Add SSH Key 按钮，粘贴进去保存即可。</p>
+        <p>今天给大家推荐一款性价比较高的VPS主机-Vultr，目前商家推出了最低2.5$/月<br><img src="/images/_20171221180139.png" alt="_20171221180139"></p>
+<h3 id="新用户注册VULTR账户入口">新用户注册VULTR账户入口</h3><table><tr><td bgcolor="silver"> 注册直达通道：<a href="https://www.vultr.com/?ref=7268361" target="_blank" rel="external"><font color="#f91119">新用户注册VULTR账号直达链接（目前支持支付宝付款）</font></a> </td></tr></table>
 
       
     </div>
@@ -144,11 +133,11 @@
 
     
     <footer class="article-footer">
-      <a data-url="http://www.tuwaner.com/2017/05/19/如何创建GitHub公钥/" data-id="cjba5pe2j000ais04hhs9zvmi" class="article-share-link">
+      <a data-url="http://www.tuwaner.com/2017/12/21/Vultr注册/" data-id="cjbgau6ih0000b80427akoaoc" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VPS/">VPS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vultr/">Vultr</a></li></ul>
 
 
     </footer>
@@ -160,18 +149,11 @@
   
   <li role="presentation">
   <span style="">上一篇：</span>
-    <a href="/2017/02/20/String StringBuilder StringBuffer的异同/" id="article-nav-older">
-      String StringBuilder StringBuffer的异同
+    <a href="/2017/05/19/如何创建GitHub公钥/" id="article-nav-older">
+      如何创建Github公钥
     </a>
   </li>
   
-  
-  <li role="presentation">
-  <span>下一篇：</span>
-    <a href="/2017/12/21/Vultr注册/" id="article-nav-newer">
-      Vultr注册通道
-    </a>
-  </li>
   
 </ul>
 </div>
