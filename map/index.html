@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #map {
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <script>
+        function initMap() {
+            var myLatlng = {
+                lat: 39.921323,
+                lng: 116.426239
+            };
+            var marker ;
+            var markersArray = [];
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 17,
+                center: myLatlng
+            });
+            map.addListener('click', function(e) {
+                addMarker(e.latLng, map);
+                //根据经纬度获取 当前地理信息
+                var latLngData = e.latLng.lat().toFixed(6)+','+e.latLng.lng().toFixed(6);
+                console.log(latLngData)
+                $.ajax({
+                    type:"post",
+                    url:"https://maps.googleapis.com/maps/api/geocode/json?latlng="+latLngData+"&location_type=ROOFTOP&result_type=street_address&key=AIzaSyD5l1FHBwVr5wc21YgIJvzWwt2fKoN0yR8",
+                    async:true,
+                    success:function(data){
+                        console.log(data)
+                        var site = latLngData+'<br />'+data.results[0].formatted_address;
+                        console.log(site)
+                        var infowindow = new google.maps.InfoWindow({
+                            content: site
+                        });
+                        infowindow.open(map,marker); //弹出信息提示窗口
+                    }
+                });
+                
+            });
+            //添加坐标对象
+            function addMarker(latLng, map) {
+                if(markersArray.length>0){
+                        markersArray[0].setMap(null);
+                };
+                markersArray.shift(marker)
+                marker = new google.maps.Marker({
+                    position: latLng,
+                    map: map
+                });
+                markersArray.push(marker);
+            }
+        }
+    </script>
+    <script src="jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5l1FHBwVr5wc21YgIJvzWwt2fKoN0yR8&callback=initMap" async defer></script>
+	<script src="http://maps.google.cn/maps/api/js?region=cn&language=zh-CN&key=AIzaSyD5l1FHBwVr5wc21YgIJvzWwt2fKoN0yR8">
+</script>
+</body>
+
+</html>
