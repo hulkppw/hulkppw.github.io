@@ -91,13 +91,13 @@
           
   
   	
-<article id="post-中本聪-比特币 Bitcoin 论文中英文下载链接" class="article article-type-post" itemscope itemprop="blogPost">
+<article id="post-基于Spring-Data-Elasticsearch三种查询的使用示例" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h3 itemprop="name">
-      <a class="article-title" href="/2017/12/27/中本聪-比特币 Bitcoin 论文中英文下载链接/">中本聪-比特币 Bitcoin 论文中英文下载链接</a>
+      <a class="article-title" href="/2019/01/17/基于Spring-Data-Elasticsearch三种查询的使用示例/">基于Spring-Data-Elasticsearch三种查询的使用示例</a>
     </h3>
   
 
@@ -106,7 +106,7 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2017/12/27/中本聪-比特币 Bitcoin 论文中英文下载链接/" class="article-date"><time datetime="2017-12-26T16:00:00.000Z" itemprop="datePublished">2017-12-27</time></a>
+  <a href="/2019/01/17/基于Spring-Data-Elasticsearch三种查询的使用示例/" class="article-date"><time datetime="2019-01-16T16:00:00.000Z" itemprop="datePublished">2019-01-17</time></a>
 </div>
 
     
@@ -117,34 +117,21 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="/files/bitcoin.pdf">[PDF]比特币论文英文 PDF</a><br>
-
-	<div class="row">
-    <embed src="/files/bitcoin.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-<br><a href="/files/Bitcoin_zh_CN.pdf">[PDF]比特币论文中文 PDF</a><br>
-
-	<div class="row">
-    <embed src="/files/Bitcoin_zh_CN.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-</p>
-
+        <p>1.CriteriaQuery<br>标准查询<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Criteria criteria = <span class="keyword">new</span> Criteria(<span class="string">"id"</span>).is(<span class="string">"1"</span>);</span><br><span class="line">CriteriaQuery query = <span class="keyword">new</span> CriteriaQuery(criteria);</span><br><span class="line">query.addIndices(<span class="string">"test"</span>);</span><br><span class="line">query.addTypes(<span class="string">"test"</span>);</span><br><span class="line">query.setPageable(PageRequest.of(page, size))</span><br><span class="line">List&lt;TestObject&gt; list = template.queryForList(criteria, TestObject.class);</span><br></pre></td></tr></table></figure></p>
+        
+          <p class="article-more-link">
+            <a class="btn btn-primary" href="/2019/01/17/基于Spring-Data-Elasticsearch三种查询的使用示例/#more">更多...</a>
+          </p>
+        
       
     </div>
     
-      
-
-    
     <footer class="article-footer">
-      <a data-url="https://tuwaner.com/2017/12/27/中本聪-比特币 Bitcoin 论文中英文下载链接/" data-id="cjbos622f00006k04g2ln4fwm" class="article-share-link">
+      <a data-url="https://tuwaner.com/2019/01/17/基于Spring-Data-Elasticsearch三种查询的使用示例/" data-id="cjr081e8x00003oqcnig12u5k" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bitcoin/">Bitcoin</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/中本聪/">中本聪</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/区块链/">区块链</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/比特币/">比特币</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Elasticsearch/">Elasticsearch</a></li></ul>
 
 
     </footer>
@@ -152,6 +139,11 @@
   
 </article>
 
+
+
+  	
+    
+  
   	
     
   
@@ -202,6 +194,10 @@
     <ul class="sidebar-module-list">
       
         <li>
+          <a href="/2019/01/17/基于Spring-Data-Elasticsearch三种查询的使用示例/">基于Spring-Data-Elasticsearch三种查询的使用示例</a>
+        </li>
+      
+        <li>
           <a href="/2017/12/27/中本聪-比特币 Bitcoin 论文中英文下载链接/">中本聪-比特币 Bitcoin 论文中英文下载链接</a>
         </li>
       
@@ -237,10 +233,6 @@
           <a href="/2013/11/17/关于Java的一些基础知识/">关于Java技术的一些理解</a>
         </li>
       
-        <li>
-          <a href="/2013/11/02/Spring框架学习笔记/">Spring框架学习笔记</a>
-        </li>
-      
     </ul>
   </div>
 
@@ -265,7 +257,7 @@
   
   <div class="sidebar-module">
     <h4>标签</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Bitcoin/">Bitcoin</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Github/">Github</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Java/">Java</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Name-com/">Name.com</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/VPS/">VPS</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Vultr/">Vultr</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/中本聪/">中本聪</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/区块链/">区块链</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/框架/">框架</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/比特币/">比特币</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/算法/">算法</a></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Bitcoin/">Bitcoin</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Elasticsearch/">Elasticsearch</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Github/">Github</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Java/">Java</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Name-com/">Name.com</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/VPS/">VPS</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Vultr/">Vultr</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/中本聪/">中本聪</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/区块链/">区块链</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/框架/">框架</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/比特币/">比特币</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/算法/">算法</a></li></ul>
   </div>
 
 
@@ -273,7 +265,7 @@
   
   <div class="sidebar-module">
     <h4>归档</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/12/">December 2017</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/05/">May 2017</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">February 2017</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">January 2017</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/08/">August 2015</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/06/">June 2015</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/03/">March 2014</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2013/11/">November 2013</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2012/03/">March 2012</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2011/08/">August 2011</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2010/11/">November 2010</a></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/01/">January 2019</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/12/">December 2017</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/05/">May 2017</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">February 2017</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">January 2017</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/08/">August 2015</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/06/">June 2015</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/03/">March 2014</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2013/11/">November 2013</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2012/03/">March 2012</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2011/08/">August 2011</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2010/11/">November 2010</a></li></ul>
   </div>
 
 
@@ -285,7 +277,7 @@
   <footer class="blog-footer">
   <div class="container">
     <div id="footer-info" class="inner">
-      &copy; 2018 wangly<br>
+      &copy; 2019 wangly<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
