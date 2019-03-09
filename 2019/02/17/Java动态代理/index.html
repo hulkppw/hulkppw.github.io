@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Java动态代理 | </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="代理代理是设计模式中的一种，分为静态代理和动态代理两种。所谓静态代理就是在程序运行之前将要代理的类通过代码进行实现，而动态代理则是在程序运行时创建，代理类不会显示的在程序中实现出来，需要在运行时根据事先定义好的规则进行实现。根据定义静态代理适合一些需要单独生成代理类的场景，而动态代理则是用于一些统一处理的情况，这样做的好处是可以避免创建很多重复的代码，增强程序的可维护性和可读性。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java动态代理">
+<meta property="og:url" content="https://tuwaner.com/2019/02/17/Java动态代理/index.html">
+<meta property="og:site_name">
+<meta property="og:description" content="代理代理是设计模式中的一种，分为静态代理和动态代理两种。所谓静态代理就是在程序运行之前将要代理的类通过代码进行实现，而动态代理则是在程序运行时创建，代理类不会显示的在程序中实现出来，需要在运行时根据事先定义好的规则进行实现。根据定义静态代理适合一些需要单独生成代理类的场景，而动态代理则是用于一些统一处理的情况，这样做的好处是可以避免创建很多重复的代码，增强程序的可维护性和可读性。">
+<meta property="og:updated_time" content="2019-03-09T16:27:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java动态代理">
+<meta name="twitter:description" content="代理代理是设计模式中的一种，分为静态代理和动态代理两种。所谓静态代理就是在程序运行之前将要代理的类通过代码进行实现，而动态代理则是在程序运行时创建，代理类不会显示的在程序中实现出来，需要在运行时根据事先定义好的规则进行实现。根据定义静态代理适合一些需要单独生成代理类的场景，而动态代理则是用于一些统一处理的情况，这样做的好处是可以避免创建很多重复的代码，增强程序的可维护性和可读性。">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/styles.css" type="text/css">
+  
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-62252110-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">首页</a></li>
+        
+          <li><a class=""
+                 href="/archives/">目录</a></li>
+        
+          <li><a class=""
+                 href="/about/">关于</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title"></h1>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-12 blog-main">
+          <article id="post-Java动态代理" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h3 class="article-title" itemprop="name">
+      Java动态代理
+    </h3>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2019/02/17/Java动态代理/" class="article-date"><time datetime="2019-02-16T16:00:00.000Z" itemprop="datePublished">2019-02-17</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>代理<br>代理是设计模式中的一种，分为静态代理和动态代理两种。<br>所谓静态代理就是在程序运行之前将要代理的类通过代码进行实现，而动态代理则是在程序运行时创建，代理类不会显示的在程序中实现出来，需要在运行时根据事先定义好的规则进行实现。根据定义静态代理适合一些需要单独生成代理类的场景，而动态代理则是用于一些统一处理的情况，这样做的好处是可以避免创建很多重复的代码，增强程序的可维护性和可读性。<br><a id="more"></a><br>Java动态代理<br>在Java中实现动态代理简单归纳为两种形式，一种是使用JDK的自身的代理技术来实现，另外一种是使用字节码增强技术。下面我们先对JDK实现技术进行介绍。<br>1.JDK代理<br>JDK代理是通过java.lang.reflect.Proxy类中newProxyInstance()方法生成代理类对象，我们先看一下方法定义的代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Proxy</span> <span class="keyword">implements</span> <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">/**</span><br><span class="line">	 * loader 类加载器</span><br><span class="line">	 * interfaces 要代理的接口</span><br><span class="line">	 * h 代理类处理器</span><br><span class="line">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Object <span class="title">newProxyInstance</span><span class="params">(ClassLoader loader, Class&lt;?&gt;[] interfaces, InvocationHandler h)</span> <span class="keyword">throws</span> IllegalArgumentException</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>这其中代理类处理器InvocationHandler只有一个方法invoke()方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">InvocationHandler</span> </span>&#123; </span><br><span class="line">    <span class="comment">/**</span><br><span class="line">	 * proxy 代理类对象</span><br><span class="line">	 * method 标识了我们具体调用的代理类的哪个方法</span><br><span class="line">	 * args 为这个方法的参数</span><br><span class="line">	 */</span></span><br><span class="line">    <span class="function">Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span></span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>举一个JDK动态代理实现的例子，<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JDKDynamicProxy</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        FruitProxy fruitProxy = <span class="keyword">new</span> FruitProxy(<span class="keyword">new</span> Apple());</span><br><span class="line">        Fruit appleProxy = (Fruit) fruitProxy.getInstance();</span><br><span class="line">        System.out.println(appleProxy.taste(<span class="string">"好吃"</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Fruit</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">taste</span><span class="params">(String flavor)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Apple</span> <span class="keyword">implements</span> <span class="title">Fruit</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">taste</span><span class="params">(String flavor)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> flavor;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FruitProxy</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Object object;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">FruitProxy</span><span class="params">(Object object)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.object = object;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        Object result = <span class="keyword">null</span>;</span><br><span class="line">        System.out.println(<span class="string">"这是催熟的苹果"</span>);</span><br><span class="line">        args = <span class="keyword">new</span> String[]&#123;<span class="string">"不好吃"</span>&#125;;</span><br><span class="line">        <span class="keyword">return</span> method.invoke(object, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//生成代理对象</span></span><br><span class="line">        <span class="keyword">return</span> Proxy.newProxyInstance(object.getClass().getClassLoader(), object.getClass().getInterfaces(), <span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+      
+
+    
+    <footer class="article-footer">
+      <a data-url="https://tuwaner.com/2019/02/17/Java动态代理/" data-id="cjt1p9ghh001ca6s6r3whxnz0" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jdk/">jdk</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动态代理/">动态代理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/字节码/">字节码</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<div class="entry-location">
+  <ul id="article-nav">
+  
+  <li role="presentation">
+  <span style="">上一篇：</span>
+    <a href="/2019/01/17/基于Spring-Data-Elasticsearch三种查询的使用示例/" id="article-nav-older">
+      基于Spring-Data-Elasticsearch三种查询的使用示例
+    </a>
+  </li>
+  
+  
+</ul>
+</div>
+
+
+  
+</article>
+
+
+  
+  <!-- Gitment���۲���ͨ�ô��� -->
+<div id="git"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: window.location.pathname,
+  owner: 'hulkppw',
+  repo: 'hulkppw.github.io',
+  oauth: {
+    client_id: '2dcdb759219753da967a',
+	client_secret: '9630f1bd762b309724ae1d338aa0bc30fda45810'
+  }
+})
+gitment.render('git')
+</script>
+<!-- Gitment�������� -->
+  
+
+
+
+        </div>
+        <!--<div class="col-sm-2 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>关于</h4>
+  
+</div>
+
+
+  
+
+
+  
+  <div class="sidebar-module">
+    <h4>标签</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Bitcoin/">Bitcoin</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Elasticsearch/">Elasticsearch</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Github/">Github</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Java/">Java</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Name-com/">Name.com</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/VPS/">VPS</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Vultr/">Vultr</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/jdk/">jdk</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/中本聪/">中本聪</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/动态代理/">动态代理</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/区块链/">区块链</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/字节码/">字节码</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/框架/">框架</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/比特币/">比特币</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/算法/">算法</a></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>归档</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/02/">February 2019</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/01/">January 2019</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/12/">December 2017</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/05/">May 2017</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">February 2017</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">January 2017</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/08/">August 2015</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/06/">June 2015</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/03/">March 2014</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2013/11/">November 2013</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2012/03/">March 2012</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2011/08/">August 2011</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2010/11/">November 2010</a></li></ul>
+  </div>
+
+
+
+
+        </div>-->
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2019 wangly<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+</body>
+</html>
