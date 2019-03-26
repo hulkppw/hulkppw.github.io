@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>二分查找Java实现 | </title>
+  <title>链表相关算法 | </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这个栗子是用Java实现的二分查找
-123456789101112131415161718public class BinarySearch &amp;#123;	public static int binarySearch(int array[], int number, int value) &amp;#123;		int left = 0;		int right = number - 1;		while (">
+  <meta name="description" content="1.删除链表指定节点
+1234567891011121314151617181920212223public class LinkedNode&amp;#123;	public LinkedNode removeElement(LinkedNode head, int val)&amp;#123;				//先从头结点开始删		while(head != null &amp;amp;&amp;amp; head.val == v">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二分查找Java实现">
-<meta property="og:url" content="https://tuwaner.com/2012/03/11/二分查找/index.html">
+<meta property="og:title" content="链表相关算法">
+<meta property="og:url" content="https://tuwaner.com/2019/03/15/删除链表指定节点/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="这个栗子是用Java实现的二分查找
-123456789101112131415161718public class BinarySearch &amp;#123;	public static int binarySearch(int array[], int number, int value) &amp;#123;		int left = 0;		int right = number - 1;		while (">
-<meta property="og:updated_time" content="2019-01-17T05:54:05.417Z">
+<meta property="og:description" content="1.删除链表指定节点
+1234567891011121314151617181920212223public class LinkedNode&amp;#123;	public LinkedNode removeElement(LinkedNode head, int val)&amp;#123;				//先从头结点开始删		while(head != null &amp;amp;&amp;amp; head.val == v">
+<meta property="og:updated_time" content="2019-03-26T03:25:40.451Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="二分查找Java实现">
-<meta name="twitter:description" content="这个栗子是用Java实现的二分查找
-123456789101112131415161718public class BinarySearch &amp;#123;	public static int binarySearch(int array[], int number, int value) &amp;#123;		int left = 0;		int right = number - 1;		while (">
+<meta name="twitter:title" content="链表相关算法">
+<meta name="twitter:description" content="1.删除链表指定节点
+1234567891011121314151617181920212223public class LinkedNode&amp;#123;	public LinkedNode removeElement(LinkedNode head, int val)&amp;#123;				//先从头结点开始删		while(head != null &amp;amp;&amp;amp; head.val == v">
   
   
   
@@ -92,13 +92,13 @@
 
     <div class="row">
         <div class="col-sm-12 blog-main">
-          <article id="post-二分查找" class="article article-type-post" itemscope itemprop="blogPost">
+          <article id="post-删除链表指定节点" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h3 class="article-title" itemprop="name">
-      二分查找Java实现
+      链表相关算法
     </h3>
   
 
@@ -107,7 +107,7 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2012/03/11/二分查找/" class="article-date"><time datetime="2012-03-10T16:00:00.000Z" itemprop="datePublished">2012-03-11</time></a>
+  <a href="/2019/03/15/删除链表指定节点/" class="article-date"><time datetime="2019-03-14T16:00:00.000Z" itemprop="datePublished">2019-03-15</time></a>
 </div>
 
     
@@ -118,10 +118,12 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这个栗子是用Java实现的二分查找</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BinarySearch</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span> array[], <span class="keyword">int</span> number, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span> right = number - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">			<span class="keyword">int</span> middle = left + ((right - left) &gt;&gt; <span class="number">1</span>);</span><br><span class="line">			<span class="keyword">if</span> (array[middle] &gt; value) &#123;</span><br><span class="line">				right = middle - <span class="number">1</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (array[middle] &lt; value) &#123;</span><br><span class="line">				left = middle + <span class="number">1</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="keyword">return</span> middle;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-
+        <p>1.删除链表指定节点</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LinkedNode</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> LinkedNode <span class="title">removeElement</span><span class="params">(LinkedNode head, <span class="keyword">int</span> val)</span></span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//先从头结点开始删</span></span><br><span class="line">		<span class="keyword">while</span>(head != <span class="keyword">null</span> &amp;&amp; head.val == val)&#123;</span><br><span class="line">			head = head.next;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(head==<span class="keyword">null</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span> head;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		LinkedNode pre = head;</span><br><span class="line">		<span class="keyword">while</span>(pre.next!=<span class="keyword">null</span>)&#123;</span><br><span class="line">			<span class="keyword">if</span>(pre.next.val==val)&#123;</span><br><span class="line">				pre.next = pre.next.next;</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				pre = pre.next;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> head;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.有序链表插入元素</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LinkedNode</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insertElement</span><span class="params">(LinkedNode node)</span></span>&#123;</span><br><span class="line">		LinkedNode pre = <span class="keyword">null</span>;</span><br><span class="line">		LinkedNode current = first;</span><br><span class="line">		<span class="keyword">while</span>(current!=<span class="keyword">null</span>&amp;&amp;node.value&lt;current.value)&#123;</span><br><span class="line">			pre = current;</span><br><span class="line">			current = current.next;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(pre==<span class="keyword">null</span>)&#123;</span><br><span class="line">			first = node;</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			pre.next = node;</span><br><span class="line">		&#125;</span><br><span class="line">		node.next = current;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3.判断链表是否有环</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function"><span class="keyword">boolean</span> <span class="title">isLoopList</span><span class="params">(ListNode&lt;T&gt; head)</span></span>&#123;</span><br><span class="line">	ListNode&lt;T&gt; slowPointer, fastPointer;</span><br><span class="line"></span><br><span class="line">	slowPointer = fastPointer = head;</span><br><span class="line">	<span class="keyword">while</span>(fastPointer != <span class="keyword">null</span> &amp;&amp; fastPointer.next != <span class="keyword">null</span>)&#123;</span><br><span class="line">		slowPointer=slowPointer.next;</span><br><span class="line">		fastPointer=fastPointer.next.next;</span><br><span class="line">		<span class="keyword">if</span>(slowPointer == fastPointer)&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -129,7 +131,7 @@
 
     
     <footer class="article-footer">
-      <a data-url="https://tuwaner.com/2012/03/11/二分查找/" data-id="cjtp7fl94000ofgqcxof8nt59" class="article-share-link">
+      <a data-url="https://tuwaner.com/2019/03/15/删除链表指定节点/" data-id="cjtp7fl8w000hfgqc6c5ospik" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -145,16 +147,16 @@
   
   <li role="presentation">
   <span style="">上一篇：</span>
-    <a href="/2011/08/13/最大子序列和/" id="article-nav-older">
-      求最大子序列和的问题
+    <a href="/2019/01/17/基于Spring-Data-Elasticsearch三种查询的使用示例/" id="article-nav-older">
+      基于Spring-Data-Elasticsearch三种查询的使用示例
     </a>
   </li>
   
   
   <li role="presentation">
   <span>下一篇：</span>
-    <a href="/2012/03/16/经典排序算法/" id="article-nav-newer">
-      经典排序算法
+    <a href="/2019/03/16/淘汰算法LRU/" id="article-nav-newer">
+      淘汰算法LRU
     </a>
   </li>
   

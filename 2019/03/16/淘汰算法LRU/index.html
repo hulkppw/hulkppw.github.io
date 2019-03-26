@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title></title>
+  <title>淘汰算法LRU | </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title">
-<meta property="og:url" content="https://tuwaner.com/index.html">
+  <meta name="description" content="基于双链表实现LRU原理： 将Cache的所有位置都用双连表连接起来，当一个位置被命中之后，就将通过调整链表的指向，将该位置调整到链表头的位置，新加入的Cache直接加到链表头中。这样，在多次进行Cache操作后，最近被命中的，就会被向链表头方向移动，而没有命中的，而想链表后面移动，链表尾则表示最近最少使用的Cache。当需要替换内容时候，链表的最后位置就是最少被命中的位置，我们只需要淘汰链表最后">
+<meta property="og:type" content="article">
+<meta property="og:title" content="淘汰算法LRU">
+<meta property="og:url" content="https://tuwaner.com/2019/03/16/淘汰算法LRU/index.html">
 <meta property="og:site_name">
-<meta property="og:description">
+<meta property="og:description" content="基于双链表实现LRU原理： 将Cache的所有位置都用双连表连接起来，当一个位置被命中之后，就将通过调整链表的指向，将该位置调整到链表头的位置，新加入的Cache直接加到链表头中。这样，在多次进行Cache操作后，最近被命中的，就会被向链表头方向移动，而没有命中的，而想链表后面移动，链表尾则表示最近最少使用的Cache。当需要替换内容时候，链表的最后位置就是最少被命中的位置，我们只需要淘汰链表最后">
+<meta property="og:updated_time" content="2019-03-26T03:12:05.085Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title">
-<meta name="twitter:description">
+<meta name="twitter:title" content="淘汰算法LRU">
+<meta name="twitter:description" content="基于双链表实现LRU原理： 将Cache的所有位置都用双连表连接起来，当一个位置被命中之后，就将通过调整链表的指向，将该位置调整到链表头的位置，新加入的Cache直接加到链表头中。这样，在多次进行Cache操作后，最近被命中的，就会被向链表头方向移动，而没有命中的，而想链表后面移动，链表尾则表示最近最少使用的Cache。当需要替换内容时候，链表的最后位置就是最少被命中的位置，我们只需要淘汰链表最后">
   
   
   
@@ -60,7 +61,7 @@
     <div class="collapse navbar-collapse" id="main-menu-navbar">
       <ul class="nav navbar-nav">
         
-          <li><a class="active"
+          <li><a class=""
                  href="/index.html">首页</a></li>
         
           <li><a class=""
@@ -88,16 +89,13 @@
 
     <div class="row">
         <div class="col-sm-12 blog-main">
-          
-  
-  	
-<article id="post-淘汰算法LRU" class="article article-type-post" itemscope itemprop="blogPost">
+          <article id="post-淘汰算法LRU" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
-    <h3 itemprop="name">
-      <a class="article-title" href="/2019/03/16/淘汰算法LRU/">淘汰算法LRU</a>
+    <h3 class="article-title" itemprop="name">
+      淘汰算法LRU
     </h3>
   
 
@@ -136,117 +134,45 @@
     </footer>
   </div>
   
+    
+<div class="entry-location">
+  <ul id="article-nav">
+  
+  <li role="presentation">
+  <span style="">上一篇：</span>
+    <a href="/2019/03/15/删除链表指定节点/" id="article-nav-older">
+      链表相关算法
+    </a>
+  </li>
+  
+  
+</ul>
+</div>
+
+
+  
 </article>
 
 
-
-  	
-    
   
-  	
-    
+  <!-- Gitment���۲��ͨ�ô��� -->
+<div id="git"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: window.location.pathname,
+  owner: 'hulkppw',
+  repo: 'hulkppw.github.io',
+  oauth: {
+    client_id: '2dcdb759219753da967a',
+	client_secret: '9630f1bd762b309724ae1d338aa0bc30fda45810'
+  }
+})
+gitment.render('git')
+</script>
+<!-- Gitment������� -->
   
-  	
-    
-  
-  	
-    
-  
-  	
-    
-  
-  	
-    
-  
-  	
-    
-  
-  	
-    
-  
-  	
-    
-  
-  	
-    
-  
-  	
-    
-  
-  	
-    
-  
-  	
-    
-  
-  	
-    
-  
-  	
-    
-  
-  	
-    
-  
-  	
-    
-  
-  	
-    
-  
-  
-  <div id="recent_posts" class="archives-wrap">
-    
-  <div class="sidebar-module">
-    <h3>最新文章</h3>
-    <ul class="sidebar-module-list">
-      
-        <li>
-          <a href="/2019/03/16/淘汰算法LRU/">淘汰算法LRU</a>
-        </li>
-      
-        <li>
-          <a href="/2019/03/15/删除链表指定节点/">链表相关算法</a>
-        </li>
-      
-        <li>
-          <a href="/2019/01/17/基于Spring-Data-Elasticsearch三种查询的使用示例/">基于Spring-Data-Elasticsearch三种查询的使用示例</a>
-        </li>
-      
-        <li>
-          <a href="/2017/12/27/中本聪-比特币 Bitcoin 论文中英文下载链接/">中本聪-比特币 Bitcoin 论文中英文下载链接</a>
-        </li>
-      
-        <li>
-          <a href="/2017/12/21/Vultr注册/">Vultr注册优惠</a>
-        </li>
-      
-        <li>
-          <a href="/2017/05/19/如何创建GitHub公钥/">如何创建Github公钥</a>
-        </li>
-      
-        <li>
-          <a href="/2017/02/20/String StringBuilder StringBuffer的异同/">String StringBuilder StringBuffer的异同</a>
-        </li>
-      
-        <li>
-          <a href="/2017/02/17/Java动态代理/">Java动态代理</a>
-        </li>
-      
-        <li>
-          <a href="/2017/01/23/Name 域名注册续费优惠码/">Name.com 域名注册/续费优惠码</a>
-        </li>
-      
-        <li>
-          <a href="/2015/08/20/推荐蒋鑫的GotGithub/">推荐蒋鑫的GotGithub</a>
-        </li>
-      
-    </ul>
-  </div>
-
-  </div>
-
-
 
 
 
