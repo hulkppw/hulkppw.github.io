@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>二分查找Java实现 | </title>
+  <title>搜索二叉树与双向链表相互转换 | </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.问：一个有序数组，找出给定值的索引值通过使用二分查找实现，时间复杂度为O(log2N)
-123456789101112131415161718public class BinarySearch &amp;#123;	public static int binarySearch(int array[], int number, int value) &amp;#123;		int left = 0;		int">
+  <meta name="description" content="1.搜索二叉树转双向列表
+1234567891011121314151617181920212223242526272829303132333435363738394041class TreeNode&amp;#123;	int val = 0;	TreeNode left = null;	TreeNode right = null;	public TreeNode(int val)&amp;#123;		thi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二分查找Java实现">
-<meta property="og:url" content="https://tuwaner.com/2012/03/11/二分查找/index.html">
+<meta property="og:title" content="搜索二叉树与双向链表相互转换">
+<meta property="og:url" content="https://tuwaner.com/2019/03/15/搜索二叉树与双向链表相互转换/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="1.问：一个有序数组，找出给定值的索引值通过使用二分查找实现，时间复杂度为O(log2N)
-123456789101112131415161718public class BinarySearch &amp;#123;	public static int binarySearch(int array[], int number, int value) &amp;#123;		int left = 0;		int">
-<meta property="og:updated_time" content="2019-05-16T09:17:33.386Z">
+<meta property="og:description" content="1.搜索二叉树转双向列表
+1234567891011121314151617181920212223242526272829303132333435363738394041class TreeNode&amp;#123;	int val = 0;	TreeNode left = null;	TreeNode right = null;	public TreeNode(int val)&amp;#123;		thi">
+<meta property="og:updated_time" content="2019-03-27T06:10:47.528Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="二分查找Java实现">
-<meta name="twitter:description" content="1.问：一个有序数组，找出给定值的索引值通过使用二分查找实现，时间复杂度为O(log2N)
-123456789101112131415161718public class BinarySearch &amp;#123;	public static int binarySearch(int array[], int number, int value) &amp;#123;		int left = 0;		int">
+<meta name="twitter:title" content="搜索二叉树与双向链表相互转换">
+<meta name="twitter:description" content="1.搜索二叉树转双向列表
+1234567891011121314151617181920212223242526272829303132333435363738394041class TreeNode&amp;#123;	int val = 0;	TreeNode left = null;	TreeNode right = null;	public TreeNode(int val)&amp;#123;		thi">
   
   
   
@@ -92,13 +92,13 @@
 
     <div class="row">
         <div class="col-sm-12 blog-main">
-          <article id="post-二分查找" class="article article-type-post" itemscope itemprop="blogPost">
+          <article id="post-搜索二叉树与双向链表相互转换" class="article article-type-post" itemscope itemprop="blogPost">
 
   <header class="article-header">
     
   
     <h3 class="article-title" itemprop="name">
-      二分查找Java实现
+      搜索二叉树与双向链表相互转换
     </h3>
   
 
@@ -107,7 +107,7 @@
 
   <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2012/03/11/二分查找/" class="article-date"><time datetime="2012-03-10T16:00:00.000Z" itemprop="datePublished">2012-03-11</time></a>
+  <a href="/2019/03/15/搜索二叉树与双向链表相互转换/" class="article-date"><time datetime="2019-03-14T16:00:00.000Z" itemprop="datePublished">2019-03-15</time></a>
 </div>
 
     
@@ -118,11 +118,10 @@
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1.问：一个有序数组，找出给定值的索引值<br>通过使用二分查找实现，时间复杂度为O(log2N)</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BinarySearch</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span> array[], <span class="keyword">int</span> number, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span> right = number - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">			<span class="keyword">int</span> middle = left + ((right - left) &gt;&gt; <span class="number">1</span>);</span><br><span class="line">			<span class="keyword">if</span> (array[middle] &gt; value) &#123;</span><br><span class="line">				right = middle - <span class="number">1</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (array[middle] &lt; value) &#123;</span><br><span class="line">				left = middle + <span class="number">1</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="keyword">return</span> middle;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>2.问:一个数组是由一个递减数列左移若干位形成的，例{4，5，6，1，2，3}，找出给定值的索引值</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BinarySearch</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span> array[], <span class="keyword">int</span> number, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span> right = number - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">int</span> mid;</span><br><span class="line">		<span class="keyword">while</span>(left &lt;= right)&#123;</span><br><span class="line">			mid = left + (right - left) / <span class="number">2</span>;</span><br><span class="line">			<span class="keyword">if</span>(array[mid] == value)&#123;</span><br><span class="line">				<span class="keyword">return</span> mid;</span><br><span class="line">			&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="keyword">if</span>(array[left] &lt;= array[mid])&#123;</span><br><span class="line">					<span class="keyword">if</span>(array[left] &lt;= value &amp;&amp; value &lt; array[mid])&#123;</span><br><span class="line">						right = mid - <span class="number">1</span>;</span><br><span class="line">					&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">						left = mid + <span class="number">1</span>;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">					<span class="keyword">if</span>(array[mid] &lt;= value &amp;&amp; value &lt; array[right])&#123;</span><br><span class="line">						left = mid + <span class="number">1</span>;</span><br><span class="line">					&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">						right = mid - <span class="number">1</span>;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>1.搜索二叉树转双向列表</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> val = <span class="number">0</span>;</span><br><span class="line">	TreeNode left = <span class="keyword">null</span>;</span><br><span class="line">	TreeNode right = <span class="keyword">null</span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">TreeNode</span><span class="params">(<span class="keyword">int</span> val)</span></span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.val = val;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BSTToLinkedList</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> TreeNode <span class="title">convert</span><span class="params">(TreeNode root)</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(root == <span class="keyword">null</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		TreeNode head = <span class="keyword">new</span> TreeNode(<span class="number">0</span>);</span><br><span class="line">		TreeNode prev = <span class="keyword">new</span> TreeNode(<span class="number">0</span>);</span><br><span class="line">		convertHelper(TreeNode root, TreeNode head, TreeNode prev);</span><br><span class="line">		<span class="keyword">return</span> head.left;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">convertHelper</span><span class="params">(TreeNode root, TreeNode head, TreeNode prev)</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(root == <span class="keyword">null</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		convertHelper(root.left, head, prev);</span><br><span class="line">		<span class="keyword">if</span>(head.left == <span class="keyword">null</span>)&#123;</span><br><span class="line">			head.left = root;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(prev.left == <span class="keyword">null</span>)&#123;</span><br><span class="line">			prev.left = root;</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			prev.left.right = root;</span><br><span class="line">			root.left = prev.left;</span><br><span class="line">			prev.left = root;</span><br><span class="line">		&#125;</span><br><span class="line">		convertHelper(root.right, head, prev);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.双向列表转搜索二叉树<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     
@@ -130,7 +129,7 @@
 
     
     <footer class="article-footer">
-      <a data-url="https://tuwaner.com/2012/03/11/二分查找/" data-id="cjtp7fl94000ofgqcxof8nt59" class="article-share-link">
+      <a data-url="https://tuwaner.com/2019/03/15/搜索二叉树与双向链表相互转换/" data-id="cjvoza3gx00046wqc0nwm9i83" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -146,16 +145,16 @@
   
   <li role="presentation">
   <span style="">上一篇：</span>
-    <a href="/2012/03/11/二分查找 - 副本/" id="article-nav-older">
-      二分查找Java实现
+    <a href="/2019/03/15/链表相关算法/" id="article-nav-older">
+      链表相关算法
     </a>
   </li>
   
   
   <li role="presentation">
   <span>下一篇：</span>
-    <a href="/2012/03/16/经典排序算法/" id="article-nav-newer">
-      经典排序算法
+    <a href="/2019/03/16/淘汰算法LRU/" id="article-nav-newer">
+      淘汰算法LRU
     </a>
   </li>
   

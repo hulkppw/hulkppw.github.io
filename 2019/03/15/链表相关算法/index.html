@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>链表相关算法 | </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.删除链表指定节点
+1234567891011121314151617181920212223public class LinkedNode&amp;#123;	public LinkedNode removeElement(LinkedNode head, int val)&amp;#123;				//先从头结点开始删		while(head != null &amp;amp;&amp;amp; head.val == v">
+<meta property="og:type" content="article">
+<meta property="og:title" content="链表相关算法">
+<meta property="og:url" content="https://tuwaner.com/2019/03/15/链表相关算法/index.html">
+<meta property="og:site_name">
+<meta property="og:description" content="1.删除链表指定节点
+1234567891011121314151617181920212223public class LinkedNode&amp;#123;	public LinkedNode removeElement(LinkedNode head, int val)&amp;#123;				//先从头结点开始删		while(head != null &amp;amp;&amp;amp; head.val == v">
+<meta property="og:updated_time" content="2019-05-15T08:42:44.756Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="链表相关算法">
+<meta name="twitter:description" content="1.删除链表指定节点
+1234567891011121314151617181920212223public class LinkedNode&amp;#123;	public LinkedNode removeElement(LinkedNode head, int val)&amp;#123;				//先从头结点开始删		while(head != null &amp;amp;&amp;amp; head.val == v">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/styles.css" type="text/css">
+  
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-62252110-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">首页</a></li>
+        
+          <li><a class=""
+                 href="/archives/">目录</a></li>
+        
+          <li><a class=""
+                 href="/about/">关于</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title"></h1>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-12 blog-main">
+          <article id="post-链表相关算法" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h3 class="article-title" itemprop="name">
+      链表相关算法
+    </h3>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2019/03/15/链表相关算法/" class="article-date"><time datetime="2019-03-14T16:00:00.000Z" itemprop="datePublished">2019-03-15</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.删除链表指定节点</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LinkedNode</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> LinkedNode <span class="title">removeElement</span><span class="params">(LinkedNode head, <span class="keyword">int</span> val)</span></span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//先从头结点开始删</span></span><br><span class="line">		<span class="keyword">while</span>(head != <span class="keyword">null</span> &amp;&amp; head.val == val)&#123;</span><br><span class="line">			head = head.next;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(head==<span class="keyword">null</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span> head;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		LinkedNode pre = head;</span><br><span class="line">		<span class="keyword">while</span>(pre.next!=<span class="keyword">null</span>)&#123;</span><br><span class="line">			<span class="keyword">if</span>(pre.next.val==val)&#123;</span><br><span class="line">				pre.next = pre.next.next;</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				pre = pre.next;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> head;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.有序链表插入元素</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LinkedNode</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insertElement</span><span class="params">(LinkedNode node)</span></span>&#123;</span><br><span class="line">		LinkedNode pre = <span class="keyword">null</span>;</span><br><span class="line">		LinkedNode current = first;</span><br><span class="line">		<span class="keyword">while</span>(current!=<span class="keyword">null</span>&amp;&amp;node.value&lt;current.value)&#123;</span><br><span class="line">			pre = current;</span><br><span class="line">			current = current.next;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(pre==<span class="keyword">null</span>)&#123;</span><br><span class="line">			first = node;</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			pre.next = node;</span><br><span class="line">		&#125;</span><br><span class="line">		node.next = current;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3.判断链表是否有环，如果有找出环的入口点</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ListNode&lt;T&gt; <span class="title">isLoopList</span><span class="params">(ListNode&lt;T&gt; head)</span></span>&#123;</span><br><span class="line">	ListNode&lt;T&gt; slowPointer, fastPointer;</span><br><span class="line">	slowPointer = fastPointer = head;</span><br><span class="line">	<span class="keyword">while</span>(fastPointer != <span class="keyword">null</span> &amp;&amp; fastPointer.next != <span class="keyword">null</span>)&#123;</span><br><span class="line">		slowPointer=slowPointer.next;</span><br><span class="line">		fastPointer=fastPointer.next.next;</span><br><span class="line">		<span class="keyword">if</span>(slowPointer == fastPointer)&#123;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="comment">//有环</span></span><br><span class="line">	<span class="keyword">if</span>(fastPointer != <span class="keyword">null</span> &amp;&amp; fastPointer.next != <span class="keyword">null</span>)&#123;</span><br><span class="line">		<span class="keyword">while</span>(fastPointer != head)&#123;</span><br><span class="line">			fastPointer=fastPointer.next;</span><br><span class="line">			head=head.next;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> fastPointer;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+      
+
+    
+    <footer class="article-footer">
+      <a data-url="https://tuwaner.com/2019/03/15/链表相关算法/" data-id="cjvoza3gu00026wqczm9pitu3" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<div class="entry-location">
+  <ul id="article-nav">
+  
+  <li role="presentation">
+  <span style="">上一篇：</span>
+    <a href="/2019/01/17/基于Spring-Data-Elasticsearch三种查询的使用示例/" id="article-nav-older">
+      基于Spring-Data-Elasticsearch三种查询的使用示例
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+  <span>下一篇：</span>
+    <a href="/2019/03/15/搜索二叉树与双向链表相互转换/" id="article-nav-newer">
+      搜索二叉树与双向链表相互转换
+    </a>
+  </li>
+  
+</ul>
+</div>
+
+
+  
+</article>
+
+
+  
+  <!-- Gitment���۲��ͨ�ô��� -->
+<div id="git"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: window.location.pathname,
+  owner: 'hulkppw',
+  repo: 'hulkppw.github.io',
+  oauth: {
+    client_id: '2dcdb759219753da967a',
+	client_secret: '9630f1bd762b309724ae1d338aa0bc30fda45810'
+  }
+})
+gitment.render('git')
+</script>
+<!-- Gitment������� -->
+  
+
+
+
+        </div>
+        <!--<div class="col-sm-2 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>关于</h4>
+  
+</div>
+
+
+  
+
+
+  
+  <div class="sidebar-module">
+    <h4>标签</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Bitcoin/">Bitcoin</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Elasticsearch/">Elasticsearch</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Github/">Github</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Java/">Java</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Name-com/">Name.com</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/VPS/">VPS</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Vultr/">Vultr</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/jdk/">jdk</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/中本聪/">中本聪</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/动态代理/">动态代理</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/区块链/">区块链</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/字节码/">字节码</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/框架/">框架</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/比特币/">比特币</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/算法/">算法</a></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>归档</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/03/">March 2019</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/01/">January 2019</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/12/">December 2017</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/05/">May 2017</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/02/">February 2017</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/01/">January 2017</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/08/">August 2015</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/06/">June 2015</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/03/">March 2014</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2013/11/">November 2013</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2012/03/">March 2012</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2011/08/">August 2011</a></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2010/11/">November 2010</a></li></ul>
+  </div>
+
+
+
+
+        </div>-->
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2019 wangly<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+</body>
+</html>
