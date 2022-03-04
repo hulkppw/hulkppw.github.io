@@ -11,11 +11,8 @@
 	</head>
 	
 	<body>
-		<span>输入需要格式化的JSON：</span>
-		<textarea id='json-src' style="height:253px;width:1860px;padding:0 10px 10px 20px;border-right:solid 1px #ddd;border-bottom:solid 1px #ddd;border-radius:0;resize: none; outline:none;">
-
-</textarea>
-		<div id='json-target'></div>
+		<textarea id='json-src' placeholder="在此输入json字符串..." style="height:100%;width:40%;padding:0 10px 10px 20px;border-right:solid 1px #ddd;border-bottom:solid 1px #ddd;border-radius:0;resize: none; outline:none;"></textarea>
+		<div id='json-target' style="float: right;height:100%;width:50%;"></div>
 	</body>
 	<script type='text/javascript'>
 			$('#json-src').keyup(function(){
