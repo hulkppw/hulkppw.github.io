@@ -8,11 +8,49 @@
         <link rel="stylesheet" href="3.css">
         <link rel="stylesheet" href="4.css">
         <link rel="stylesheet" href="1.css">
-        
+        <style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			.box {
+				width: 500px;
+				height: 200px;
+				border: 1px solid #ccc;
+				margin: 50px auto;
+				overflow: hidden;
+			}
+			ul {
+				width: 600px;
+				height: 40px;
+				margin-left: -1px;
+				list-style: none;
+			}
+			li {
+				float: left;
+				width: 101px;
+				height: 40px;
+				text-align: center;
+				font: 600 18px/40px "simsun";
+				background-color: rgb(253, 253, 253);
+				cursor: pointer;
+			}
+			.show {
+				display: block;
+			}
+			.current {
+				background-color: hsla(0, 1%, 67%, 0.476);
+			}
+		</style>
     </head>
+    <ul>
+        <li><a style="text-decoration: none;color: black;" href="https://tuwaner.com/json/index.html">JSON解析</a></li>
+        <li class="current">时间戳转换</li>
+        <!-- <li><a style="text-decoration: none;color: black;" href="https://tuwaner.com/json/compress.html">JSON压缩</a></li> -->
+        
+      </ul>
     <div class="main">
         <div class="inner">
-            <h2>时间戳转换</h2>
             <p><span class="form_left">现在：</span><a id="js_timestamp_now" href="javascript:;">-</a> 控制：<a id="js_timer_start" href="javascript:;"><i
                         class="fas fa-play"></i> 开始</a> <a id="js_timer_stop" href="javascript:;" style="color: #E74C3C;"><i class="fas fa-stop"></i> 停止</a>
             </p>
