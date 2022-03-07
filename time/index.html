@@ -3,7 +3,9 @@
     <head>
         <title>在线 时间戳转换</title>
         <meta charset="UTF-8">
+        <script src="te.js"></script>
         <script src="jQuery.js"></script>
+        
         <link rel="stylesheet" href="2.css">
         <link rel="stylesheet" href="3.css">
         <link rel="stylesheet" href="4.css">
@@ -16,7 +18,7 @@
 			.box {
 				width: 500px;
 				height: 200px;
-				border: 1px solid #ccc;
+				border: 1px solid rgb(182, 64, 64);
 				margin: 50px auto;
 				overflow: hidden;
 			}
@@ -51,30 +53,33 @@
       </ul>
     <div class="main">
         <div class="inner">
-            <p><span class="form_left">现在：</span><a id="js_timestamp_now" href="javascript:;">-</a> 控制：<a id="js_timer_start" href="javascript:;"><i
-                        class="fas fa-play"></i> 开始</a> <a id="js_timer_stop" href="javascript:;" style="color: #E74C3C;"><i class="fas fa-stop"></i> 停止</a>
+            <p><span class="form_left">现在</span><a id="js_timestamp_now" href="javascript:;">-</a> 北京时间 <a id="js_bjtime_now" href="javascript:;">-</a> 
             </p>
             <p>
                 <label class="form_left">时间戳</label>
                 <input type="text" class="text" id="js_timestamp" name="timestamp">
+                <!-- <span>北京时间</span> <span id="js_daylight">（夏令时）</span> -->
+                <button id="js_convert_timestamp" type="button">转换北京时间 <i class="fas fa-angle-double-right"></i></button>
+                <input type="text" class="text" id="js_datetime" name="datetime"> 
                 <select id="js_timestamp_unit" name="timestamp_unit">
                     <option value="s">秒(s)</option>
                     <option value="ms">毫秒(ms)</option>
                 </select>
-                <button id="js_convert_timestamp" type="button">转换 <i class="fas fa-angle-double-right"></i></button>
-                <input type="text" class="text" id="js_datetime" name="datetime"> <span>北京时间</span> <span id="js_daylight">（夏令时）</span>
                 
             </p>
             <p>
-                <label class="form_left">时间</label>
-                <input type="text" class="text" id="js_datetime_o" name="datetime_o"> <span>北京时间</span>
+                <label class="form_left">北京时间</label>
+                <input type="text" class="text" id="js_datetime_o" name="datetime_o"> 
+                <!-- <span>北京时间</span> -->
                 
-                <button id="js_convert_datetime" type="button">转换 <i class="fas fa-angle-double-right"></i></button>
+                <button id="js_convert_datetime" type="button">转换 --时间戳<i class="fas fa-angle-double-right"></i></button>
                 <input type="text" class="text" id="js_timestamp_o" name="timestamp_o">
                 <select id="js_timestamp_unit_o" name="timestamp_unit_o">
                     <option value="s">秒(s)</option>
                     <option value="ms">毫秒(ms)</option>
                 </select>
             </p>
+            <script src="sd.js"></script>
             <script src="sc.js"></script>
+            <script src="de.js"></script>
 </html>

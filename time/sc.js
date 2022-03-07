@@ -30,6 +30,23 @@ dayjs.extend(dayjs_plugin_utc);
         }
         js_timestamp_now.text(clockNow);
     };
+	
+	var bjtime = function(){
+		var timestamp = js_timestamp_now.text();
+		timestamp = timestamp.replace(/^\s+|\s+$/, '');
+		timestamp *= 1;
+		if (js_timestamp_unit.val() === 's') {
+			timestamp *= 1000;
+		}
+		var YmdHis = dayjs(timestamp).utcOffset(8);
+		$('#js_bjtime_now').text(YmdHis.format('YYYY-MM-DD HH:mm:ss'));
+	}
+	var bjtimer = setInterval(bjtime, 1);
+
+	$('#js_bjtime_now').on('click', function (e) {
+		e.preventDefault();
+		js_datetime_o.val($(this).text());
+	});
 
 	var timer = setInterval(clock, 1000);
 	js_timestamp_now.on('click', function (e) {
