@@ -30,7 +30,6 @@ dayjs.extend(dayjs_plugin_utc);
         }
         js_timestamp_now.text(clockNow);
     };
-	
 	var bjtime = function(){
 		var timestamp = js_timestamp_now.text();
 		timestamp = timestamp.replace(/^\s+|\s+$/, '');
