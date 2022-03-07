@@ -35,17 +35,6 @@
 				background-color: rgb(253, 253, 253);
 				cursor: pointer;
 			}
-			/*span {
-				display: none;
-				width: 500px;
-				height: 160px;
-				background-color: yellow;
-				text-align: center;
-				font: 700 100px/160px "simsun";
-			}
-			 .show {
-				display: block;
-			} */
 			.current {
 				background-color: hsla(0, 1%, 67%, 0.476);
 			}
@@ -73,6 +62,10 @@
 			$('#json-src').keyup(function(){
 				var content = $.trim($(this).val());
 				var result = '';
+				if(content==''){
+					$('#json-target').html('');
+					return;
+				}
 					try{
 						current_json = jsonlint.parse(content);
 						current_json_str = JSON.stringify(current_json);
@@ -81,7 +74,6 @@
 						result = '<span style="color: #f1592a;font-weight:bold;">' + e + '</span>';
 						current_json_str = result;
 					}
-					console.log(result);
 					$('#json-target').html(result);
 					
 
