@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="applicable-device" content="pc">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="always">
+	<title>URL编码解码</title>
+	<style>
+        * {
+				padding: 0;
+				margin: 0;
+			}
+			.box {
+				width: 500px;
+				height: 200px;
+				border: 1px solid #ccc;
+				margin: 50px auto;
+				overflow: hidden;
+			}
+			ul {
+				width: 600px;
+				height: 40px;
+				margin-left: -1px;
+				list-style: none;
+			}
+			li {
+				float: left;
+				width: 120px;
+				height: 40px;
+				text-align: center;
+				font: 600 18px/40px "simsun";
+				background-color: rgb(253, 253, 253);
+				cursor: pointer;
+			}
+			.current {
+				background-color: hsl(203, 87%, 70%);
+			}
+		.head .menu ul li {
+			margin: 35px 29px 0;
+		}
+
+		.nav_list {
+			width: auto;
+			margin-right: 70px;
+		}
+
+		body {
+			min-width: 1210px;
+			margin: 0;
+		}
+
+		textarea {
+			resize: none;
+		}
+
+		button:hover {
+			opacity: .8;
+			cursor: pointer;
+		}
+
+		.tooltit {
+			text-align: center;
+			padding: 20px;
+			color: #f7f7f7;
+			letter-spacing: 2px;
+			font-size: 30px;
+			margin-bottom: 19px;
+			background: linear-gradient(to top, #1c9133, #38bc53);
+		}
+
+		.but-in,
+		.but-out {
+			line-height: 49px;
+			margin: 21px auto;
+			letter-spacing: 1px;
+			color: #286dea;
+			position: relative;
+			font-size: 21px;
+		}
+
+		.but-out {
+			color: #1c9133;
+		}
+
+		.but-in:before,
+		.but-in:after,
+		.but-out:before,
+		.but-out:after {
+			content: "";
+			width: 100px;
+			height: 1px;
+			background-color: #286dea;
+			position: absolute;
+			z-index: 1;
+			right: 20%;
+			top: 50%;
+		}
+
+		.but-in:before {
+			left: 19%;
+		}
+
+		.but-out:before,
+		.but-out:after {
+			background-color: #1c9133;
+		}
+
+		.but-out:before {
+			left: 19%;
+		}
+
+		.five button{
+			text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+			color: #fff;
+			padding: 9px 11px;
+			font-size: 12px;
+			border-radius: 6px;
+			background: #008eff;
+			cursor: pointer;
+			border: none;
+		}
+
+		.five {
+			text-align: center;
+			position: relative;
+		}
+
+		.five .form-control{
+			resize: none;
+			border: 1px solid #ccc;
+			border-radius: 6px;
+			margin: 0 60px;
+			font-size: 16px;
+			padding: 20px;
+			background: #fff;
+		}
+
+		.five button{
+			position: absolute;
+			left: 50%;
+			top: 25%;
+			margin-left: -33px;
+		}
+
+		.five .d2{
+			top: 40%;
+			background: #20a53a;
+		}
+
+		.show {
+			display: inline-block;
+		}
+
+		.intxt {
+			box-shadow: inset 0 0 38px #5157ff0f;
+		}
+
+		.outxt {
+			box-shadow: inset 0 0 38px #38bc530f;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- <ul>
+			<li>JSON解析</li>
+			<li>JSON压缩</li>
+		</ul> -->
+		<!-- <div class="box">
+			
+			
+		  </div> -->
+		  <ul>
+			<li><a style="text-decoration: none;color: black;" href="https://tuwaner.com/json/index.html">JSON解析</a></li>
+			<!-- <li><a style="text-decoration: none;color: black;" href="https://tuwaner.com/json/compress.html">JSON压缩</a></li> -->
+			<li><a style="text-decoration: none;color: black;" href="https://tuwaner.com/time/index.html">时间戳转换</li>
+            <li class="current">URL编码解码</a></li>
+            
+		  </ul>
+		<article>
+			<section class="five" id="fiv">
+				<div class="show">
+					<p class="but-in">Url输入</p>
+					<textarea type="text" class="form-control s1 intxt" rows="28"
+						cols="46">http://www.baidu.com?t=hello</textarea>
+				</div>
+				<button onclick="fivework()" class="d1">URL编码</button>
+				<button onclick="fivework1()" class="d2">URL解码</button>
+				<div class="show">
+					<p class="but-out">Url输出</p>
+					<textarea type="text" class="form-control s2 outxt" rows="28" cols="46"></textarea>
+				</div>
+			</section>
+		</article>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript">
+		// Url编码:加密
+		function fivework() {
+			uri = $(".five .s1").val();
+			if (!uri) {
+				alert("请输入Url");
+				return false;
+			}
+			var arry = uri.split("?");
+			var head = arry[0];
+			var body = arry[1];
+			if (body) {
+				var body_encode = encodeURIComponent(body);
+				var uri_encode = head + "?" + body_encode;
+			} else {
+				var body_encode = "";
+				var uri_encode = head;
+			}
+			$(".five .s2").val(uri_encode);
+		}
+
+		// Url解码：解密
+		function fivework1() {
+			uri_encode = $(".five .s1").val();
+			if (!uri_encode) {
+				alert("请输入Url");
+				return false;
+			}
+			var uri = decodeURIComponent(uri_encode)
+			$(".five .s2").val(uri);
+		}
+	</script>
+</body>
+</html>
