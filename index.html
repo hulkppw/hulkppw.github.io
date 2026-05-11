@@ -1,0 +1,1165 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="个人博客" >
+    <meta name="description" content="我的个人博客" >
+
+    
+    <link rel="alternative" href="/atom.xml" title="" type="application/atom+xml" >
+    
+    
+    <link rel="icon" href="/" >
+    
+    
+<link rel="stylesheet" href="/css/style.css?v=1778481670161.css">
+
+    <!--[if lt IE 9]>
+    
+<script src="/js/html5.js"></script>
+
+    <![endif]-->
+    
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
+
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name"></span>
+                    <span class="description">null</span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav iconfont icon-nav" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/index.html" class="item current">
+                <a href="/" title="首页" class="iconfont icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/index.html" class="item ">
+                <a href="/archives/" title="归档" class="iconfont icon-archives">&nbsp;归档</a>
+            </li>
+            
+            <li rel="/index.html" class="item ">
+                <a href="/about/" title="关于" class="iconfont icon-staff">&nbsp;关于</a>
+            </li>
+            
+            <li rel="/index.html" class="item ">
+                <a href="/comment/" title="留言" class="iconfont icon-comment">&nbsp;留言</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/avatar.jpg" alt="avatar" title="Jelon" >
+            </div>
+        </div>
+    </section>
+</header>
+
+
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 首页 -->
+
+    
+    <h3 class="widget-hd">
+        <strong>
+            
+                最近动态
+            
+        </strong>
+    </h3>
+    
+        <!-- 文章列表 item -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+            <a href="javascript: void(0);" class="cat">未分类</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://tuwaner.com/2019/03/16/%E6%B7%98%E6%B1%B0%E7%AE%97%E6%B3%95LRU/">
+    		淘汰算法LRU
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2019-03-15T16:00:00.000Z">2019-03-16</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/%E7%AE%97%E6%B3%95/" title="算法">算法</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p>基于双链表实现LRU<br>原理： 将Cache的所有位置都用双连表连接起来，当一个位置被命中之后，就将通过调整链表的指向，将该位置调整到链表头的位置，新加入的Cache直接加到链表头中。这样，在多次进行Cache操作后，最近被命中的，就会被向链表头方向移动，而没有命中的，而想链表后面移动，链表尾则表示最近最少使用的Cache。当需要替换内容时候，链表的最后位置就是最少被命中的位置，我们只需要淘汰链表最后的部分即可。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LRUCache</span> &#123;  </span><br><span class="line">	</span><br><span class="line">	<span class="comment">//缓存大小</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> cacheSize;</span><br><span class="line">    <span class="comment">//缓存容器</span></span><br><span class="line">    <span class="keyword">private</span> Hashtable&lt;K, CacheNode&lt;K, V&gt;&gt; nodes;</span><br><span class="line">    <span class="comment">//当前缓存对象数量</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> currentSize;</span><br><span class="line">    <span class="comment">//(实现双链表)链表头</span></span><br><span class="line">    <span class="keyword">private</span> CacheNode first;</span><br><span class="line">    <span class="comment">//(实现双链表)链表尾</span></span><br><span class="line">    <span class="keyword">private</span> CacheNode last;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">LRUCache</span><span class="params">(<span class="type">int</span> i)</span> &#123;</span><br><span class="line">        currentSize = <span class="number">0</span>;</span><br><span class="line">        cacheSize = i;</span><br><span class="line">        nodes = <span class="keyword">new</span> <span class="title class_">Hashtable</span>(i);<span class="comment">//缓存容器</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 链表节点</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">CacheNode</span>&lt;K,V&gt; &#123;</span><br><span class="line">        CacheNode prev;</span><br><span class="line">        CacheNode next;</span><br><span class="line">        K key;</span><br><span class="line">        V value;</span><br><span class="line">        CacheNode() &#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> V <span class="title function_">get</span><span class="params">(K key)</span>&#123;</span><br><span class="line">        CacheNode&lt;K, V&gt; node = nodes.get(key);</span><br><span class="line">        <span class="keyword">if</span>(node!=<span class="literal">null</span>)&#123;</span><br><span class="line">            moveToHead(node);</span><br><span class="line">            <span class="keyword">return</span> node.value;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">put</span><span class="params">(K key, V value)</span>&#123;</span><br><span class="line">        CacheNode&lt;K, V&gt; node = nodes.get(key);</span><br><span class="line">        <span class="keyword">if</span>(node == <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(currentSize &gt;= cacheSize)&#123;</span><br><span class="line">                <span class="keyword">if</span>(last != <span class="literal">null</span>)&#123;</span><br><span class="line">                    nodes.remove(last.key);</span><br><span class="line">                &#125;</span><br><span class="line">                removeLast();</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                currentSize++;</span><br><span class="line">            &#125;</span><br><span class="line">            node = <span class="keyword">new</span> <span class="title class_">CacheNode</span>&lt;&gt;();</span><br><span class="line">        &#125;</span><br><span class="line">        node.value=value;</span><br><span class="line">        node.key=key;</span><br><span class="line">        moveToHead(node);</span><br><span class="line">        nodes.put(key, node);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">removeLast</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(last!=<span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(last.prev != <span class="literal">null</span>)&#123;</span><br><span class="line">                last.prev.next = <span class="literal">null</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                first = <span class="literal">null</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            last = last.prev;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">moveToHead</span><span class="params">(CacheNode node)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(node == first)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (node.prev != <span class="literal">null</span>) &#123;</span><br><span class="line">            node.prev.next = node.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (node.next != <span class="literal">null</span>) &#123;</span><br><span class="line">            node.next.prev = node.prev;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (last == node) &#123;</span><br><span class="line">            last = node.prev;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (first != <span class="literal">null</span>) &#123;</span><br><span class="line">            node.next = first;</span><br><span class="line">            first.prev = node;</span><br><span class="line">        &#125;</span><br><span class="line">        first = node;</span><br><span class="line">        node.prev = <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">if</span> (last == <span class="literal">null</span>) &#123;</span><br><span class="line">            last = first;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure></p>
+
+            
+            <p class="more">
+                <a href="https://tuwaner.com/2019/03/16/%E6%B7%98%E6%B1%B0%E7%AE%97%E6%B3%95LRU/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://tuwaner.com/2019/03/16/%E6%B7%98%E6%B1%B0%E7%AE%97%E6%B3%95LRU/" title="淘汰算法LRU">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/6.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章列表 item -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+            <a href="javascript: void(0);" class="cat">未分类</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://tuwaner.com/2019/03/15/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E6%8C%87%E5%AE%9A%E8%8A%82%E7%82%B9/">
+    		链表相关算法
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2019-03-14T16:00:00.000Z">2019-03-15</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/%E7%AE%97%E6%B3%95/" title="算法">算法</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p>1.删除链表指定节点</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LinkedNode</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> LinkedNode <span class="title function_">removeElement</span><span class="params">(LinkedNode head, <span class="type">int</span> val)</span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//先从头结点开始删</span></span><br><span class="line">		<span class="keyword">while</span>(head != <span class="literal">null</span> &amp;&amp; head.val == val)&#123;</span><br><span class="line">			head = head.next;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(head==<span class="literal">null</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span> head;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="type">LinkedNode</span> <span class="variable">pre</span> <span class="operator">=</span> head;</span><br><span class="line">		<span class="keyword">while</span>(pre.next!=<span class="literal">null</span>)&#123;</span><br><span class="line">			<span class="keyword">if</span>(pre.next.val==val)&#123;</span><br><span class="line">				pre.next = pre.next.next;</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				pre = pre.next;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> head;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.有序链表插入元素</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LinkedNode</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">insertElement</span><span class="params">(LinkedNode node)</span>&#123;</span><br><span class="line">		<span class="type">LinkedNode</span> <span class="variable">pre</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">		<span class="type">LinkedNode</span> <span class="variable">current</span> <span class="operator">=</span> first;</span><br><span class="line">		<span class="keyword">while</span>(current!=<span class="literal">null</span>&amp;&amp;node.value&lt;current.value)&#123;</span><br><span class="line">			pre = current;</span><br><span class="line">			current = current.next;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(pre==<span class="literal">null</span>)&#123;</span><br><span class="line">			first = node;</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			pre.next = node;</span><br><span class="line">		&#125;</span><br><span class="line">		node.next = current;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3.判断链表是否有环</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="type">boolean</span> <span class="title function_">isLoopList</span><span class="params">(ListNode&lt;T&gt; head)</span>&#123;</span><br><span class="line">	ListNode&lt;T&gt; slowPointer, fastPointer;</span><br><span class="line"></span><br><span class="line">	slowPointer = fastPointer = head;</span><br><span class="line">	<span class="keyword">while</span>(fastPointer != <span class="literal">null</span> &amp;&amp; fastPointer.next != <span class="literal">null</span>)&#123;</span><br><span class="line">		slowPointer=slowPointer.next;</span><br><span class="line">		fastPointer=fastPointer.next.next;</span><br><span class="line">		<span class="keyword">if</span>(slowPointer == fastPointer)&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            
+            <p class="more">
+                <a href="https://tuwaner.com/2019/03/15/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E6%8C%87%E5%AE%9A%E8%8A%82%E7%82%B9/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://tuwaner.com/2019/03/15/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E6%8C%87%E5%AE%9A%E8%8A%82%E7%82%B9/" title="链表相关算法">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/5.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章列表 item -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+            <a href="javascript: void(0);" class="cat">未分类</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://tuwaner.com/2019/01/17/%E5%9F%BA%E4%BA%8ESpring-Data-Elasticsearch%E4%B8%89%E7%A7%8D%E6%9F%A5%E8%AF%A2%E7%9A%84%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B/">
+    		基于Spring-Data-Elasticsearch三种查询的使用示例
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2019-01-16T16:00:00.000Z">2019-01-17</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/Elasticsearch/" title="Elasticsearch">Elasticsearch</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p>1.CriteriaQuery<br>标准查询<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Criteria</span> <span class="variable">criteria</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Criteria</span>(<span class="string">&quot;id&quot;</span>).is(<span class="string">&quot;1&quot;</span>);</span><br><span class="line"><span class="type">CriteriaQuery</span> <span class="variable">query</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">CriteriaQuery</span>(criteria);</span><br><span class="line">query.addIndices(<span class="string">&quot;test&quot;</span>);</span><br><span class="line">query.addTypes(<span class="string">&quot;test&quot;</span>);</span><br><span class="line">query.setPageable(PageRequest.of(page, size))</span><br><span class="line">List&lt;TestObject&gt; list = template.queryForList(criteria, TestObject.class);	</span><br></pre></td></tr></table></figure><br>
+            
+            <p class="more">
+                <a href="https://tuwaner.com/2019/01/17/%E5%9F%BA%E4%BA%8ESpring-Data-Elasticsearch%E4%B8%89%E7%A7%8D%E6%9F%A5%E8%AF%A2%E7%9A%84%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://tuwaner.com/2019/01/17/%E5%9F%BA%E4%BA%8ESpring-Data-Elasticsearch%E4%B8%89%E7%A7%8D%E6%9F%A5%E8%AF%A2%E7%9A%84%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B/" title="基于Spring-Data-Elasticsearch三种查询的使用示例">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/7.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章列表 item -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+            <a href="javascript: void(0);" class="cat">未分类</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://tuwaner.com/2017/12/27/%E4%B8%AD%E6%9C%AC%E8%81%AA-%E6%AF%94%E7%89%B9%E5%B8%81%20Bitcoin%20%E8%AE%BA%E6%96%87%E4%B8%AD%E8%8B%B1%E6%96%87%E4%B8%8B%E8%BD%BD%E9%93%BE%E6%8E%A5/">
+    		中本聪-比特币 Bitcoin 论文中英文下载链接
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-12-26T16:00:00.000Z">2017-12-27</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/%E6%AF%94%E7%89%B9%E5%B8%81/" title="比特币">比特币</a> / 
+    
+        <a href="/tags/Bitcoin/" title="Bitcoin">Bitcoin</a> / 
+    
+        <a href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" title="区块链">区块链</a> / 
+    
+        <a href="/tags/%E4%B8%AD%E6%9C%AC%E8%81%AA/" title="中本聪">中本聪</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p><a href="/files/bitcoin.pdf">[PDF]比特币论文英文 PDF</a><br>
+
+	<div class="row">
+    <embed src="/files/bitcoin.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+<br><a href="/files/Bitcoin_zh_CN.pdf">[PDF]比特币论文中文 PDF</a><br>
+
+	<div class="row">
+    <embed src="/files/Bitcoin_zh_CN.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+</p>
+
+            
+            <p class="more">
+                <a href="https://tuwaner.com/2017/12/27/%E4%B8%AD%E6%9C%AC%E8%81%AA-%E6%AF%94%E7%89%B9%E5%B8%81%20Bitcoin%20%E8%AE%BA%E6%96%87%E4%B8%AD%E8%8B%B1%E6%96%87%E4%B8%8B%E8%BD%BD%E9%93%BE%E6%8E%A5/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://tuwaner.com/2017/12/27/%E4%B8%AD%E6%9C%AC%E8%81%AA-%E6%AF%94%E7%89%B9%E5%B8%81%20Bitcoin%20%E8%AE%BA%E6%96%87%E4%B8%AD%E8%8B%B1%E6%96%87%E4%B8%8B%E8%BD%BD%E9%93%BE%E6%8E%A5/" title="中本聪-比特币 Bitcoin 论文中英文下载链接">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/7.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章列表 item -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+            <a href="javascript: void(0);" class="cat">未分类</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://tuwaner.com/2017/12/21/Vultr%E6%B3%A8%E5%86%8C/">
+    		Vultr注册优惠
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-12-20T16:00:00.000Z">2017-12-21</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/Vultr/" title="Vultr">Vultr</a> / 
+    
+        <a href="/tags/VPS/" title="VPS">VPS</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p>今天给大家推荐一款性价比较高的VPS主机服务商-Vultr，目前商家推出了最低2.5$/月(纽约节点)</p>
+<p><a href="https://www.vultr.com/?ref=7268361"><img src="https://www.vultr.com/media/banner_3.png" width="300" height="250"></a></p>
+<h3 id="新用户注册VULTR账户入口">新用户注册VULTR账户入口</h3><table><tr><td bgcolor= silver > 注册直达通道：<a href="https://www.vultr.com/?ref=7268361"><font color=#f91119>新用户注册VULTR账号直达链接（目前支持支付宝付款）</font></a> </td></tr></table>
+
+<p>现在的优惠只有3美刀的Twitter关注奖励:<br><img src="/images/20171221184028.png" alt=""></p>
+
+            
+            <p class="more">
+                <a href="https://tuwaner.com/2017/12/21/Vultr%E6%B3%A8%E5%86%8C/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://tuwaner.com/2017/12/21/Vultr%E6%B3%A8%E5%86%8C/" title="Vultr注册优惠">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/1.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章列表 item -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+            <a href="javascript: void(0);" class="cat">未分类</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://tuwaner.com/2017/05/19/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAGitHub%E5%85%AC%E9%92%A5/">
+    		如何创建Github公钥
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-05-18T16:00:00.000Z">2017-05-19</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/Github/" title="Github">Github</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p>1.打开终端，Windows用户打开Git Bash</p>
+<p>2.执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="built_in">cd</span> ~/.ssh</span><br></pre></td></tr></table></figure>
+            
+            <p class="more">
+                <a href="https://tuwaner.com/2017/05/19/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAGitHub%E5%85%AC%E9%92%A5/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://tuwaner.com/2017/05/19/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BAGitHub%E5%85%AC%E9%92%A5/" title="如何创建Github公钥">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/9.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章列表 item -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+            <a href="javascript: void(0);" class="cat">未分类</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://tuwaner.com/2017/02/20/String%20StringBuilder%20StringBuffer%E7%9A%84%E5%BC%82%E5%90%8C/">
+    		String StringBuilder StringBuffer的异同
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-02-19T16:00:00.000Z">2017-02-20</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/Java/" title="Java">Java</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p>Java中一共有三总形式来表示字符串，分别为String、StringBuilder、StringBuffer，分别来分析下每一种形式的特点，以及他们之间的区别和联系。<br>1.String：又称为字符串常量，即一旦创建就不能修改。关于不能修改这一条，我们可以通过追踪源码看到，String内部实现用了一个final修饰的char数组来存字符串的值，因此，一旦给这个char数组赋值，那么这个值就不能再修改。关于String不能被继承的解释，在定义String类时，采用了final关键词进行修饰，因此我们知道了String类不能被用来继承。</p>
+
+            
+            <p class="more">
+                <a href="https://tuwaner.com/2017/02/20/String%20StringBuilder%20StringBuffer%E7%9A%84%E5%BC%82%E5%90%8C/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://tuwaner.com/2017/02/20/String%20StringBuilder%20StringBuffer%E7%9A%84%E5%BC%82%E5%90%8C/" title="String StringBuilder StringBuffer的异同">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/0.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章列表 item -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+            <a href="javascript: void(0);" class="cat">未分类</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://tuwaner.com/2017/02/17/Java%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/">
+    		Java动态代理
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-02-16T16:00:00.000Z">2017-02-17</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/" title="动态代理">动态代理</a> / 
+    
+        <a href="/tags/jdk/" title="jdk">jdk</a> / 
+    
+        <a href="/tags/%E5%AD%97%E8%8A%82%E7%A0%81/" title="字节码">字节码</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p>代理<br>代理是设计模式中的一种，分为静态代理和动态代理两种。<br>所谓静态代理就是在程序运行之前将要代理的类通过代码进行实现，而动态代理则是在程序运行时创建，代理类不会显示的在程序中实现出来，需要在运行时根据事先定义好的规则进行实现。根据定义静态代理适合一些需要单独生成代理类的场景，而动态代理则是用于一些统一处理的情况，这样做的好处是可以避免创建很多重复的代码，增强程序的可维护性和可读性。<br>
+            
+            <p class="more">
+                <a href="https://tuwaner.com/2017/02/17/Java%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://tuwaner.com/2017/02/17/Java%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/" title="Java动态代理">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/7.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章列表 item -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+            <a href="javascript: void(0);" class="cat">未分类</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://tuwaner.com/2017/01/23/Name%20%E5%9F%9F%E5%90%8D%E6%B3%A8%E5%86%8C%E7%BB%AD%E8%B4%B9%E4%BC%98%E6%83%A0%E7%A0%81/">
+    		Name.com 域名注册/续费优惠码
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2017-01-22T16:00:00.000Z">2017-01-23</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/Name-com/" title="Name.com">Name.com</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p>Name.com已经发布2017年1月的域名优惠码，用于注册/续费COM域名的价格为9.99美元，注册/续费NET域名的价格为10.99美元。</p>
+<p>优惠码：VINEGAR</p>
+<p>Name.com 的免费隐私保护（Whois Privacy）<br>优惠码： PRIVACYPLEASE</p>
+<p>Name官方网站：<a href="http://www.name.com">http://www.name.com</a></p>
+
+            
+            <p class="more">
+                <a href="https://tuwaner.com/2017/01/23/Name%20%E5%9F%9F%E5%90%8D%E6%B3%A8%E5%86%8C%E7%BB%AD%E8%B4%B9%E4%BC%98%E6%83%A0%E7%A0%81/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://tuwaner.com/2017/01/23/Name%20%E5%9F%9F%E5%90%8D%E6%B3%A8%E5%86%8C%E7%BB%AD%E8%B4%B9%E4%BC%98%E6%83%A0%E7%A0%81/" title="Name.com 域名注册/续费优惠码">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/3.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章列表 item -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+            <a href="javascript: void(0);" class="cat">未分类</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://tuwaner.com/2015/08/20/%E6%8E%A8%E8%8D%90%E8%92%8B%E9%91%AB%E7%9A%84GotGithub/">
+    		推荐蒋鑫的GotGithub
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2015-08-19T16:00:00.000Z">2015-08-20</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/Github/" title="Github">Github</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p>下面链接是蒋鑫关于github的文章:<br><a href="http://www.worldhello.net/gotgithub/index.html">gotgithub</a>：<a href="http://www.worldhello.net/gotgithub/index.html">http://www.worldhello.net/gotgithub/index.html</a><br>
+            
+            <p class="more">
+                <a href="https://tuwaner.com/2015/08/20/%E6%8E%A8%E8%8D%90%E8%92%8B%E9%91%AB%E7%9A%84GotGithub/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://tuwaner.com/2015/08/20/%E6%8E%A8%E8%8D%90%E8%92%8B%E9%91%AB%E7%9A%84GotGithub/" title="推荐蒋鑫的GotGithub">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/0.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章列表 item -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+            <a href="javascript: void(0);" class="cat">未分类</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://tuwaner.com/2015/06/18/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C/">
+    		二叉树的一些操作
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2015-06-17T16:00:00.000Z">2015-06-18</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/%E7%AE%97%E6%B3%95/" title="算法">算法</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h4 id="反转二叉树">反转二叉树</h4><p>前一段时间国外某大牛面试Google被刷掉，原因是没有能够徒手写出来反转二叉树的代码，在网上看到了一个人的分析代码，特此记下来。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> TreeNode <span class="title function_">invertTree</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        root.left = invertTree(root.left);</span><br><span class="line">        root.right = invertTree(root.right);</span><br><span class="line"></span><br><span class="line">        <span class="type">TreeNode</span> <span class="variable">tmp</span> <span class="operator">=</span> root.left;</span><br><span class="line">        root.left = root.right;</span><br><span class="line">        root.right = tmp;</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+            
+            <p class="more">
+                <a href="https://tuwaner.com/2015/06/18/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://tuwaner.com/2015/06/18/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C/" title="二叉树的一些操作">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/8.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章列表 item -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+            <a href="javascript: void(0);" class="cat">未分类</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://tuwaner.com/2014/03/21/Java%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%92%8C%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E7%AD%96%E7%95%A5/">
+    		Java垃圾收集和内存分配策略
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2014-03-20T16:00:00.000Z">2014-03-21</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/Java/" title="Java">Java</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h4 id="垃圾收集">垃圾收集</h4><p>判断对象是否存活的算法常用的有两种:<br>1.引用计数算法，给对象添加一个引用计数器，每次对象被引用的时候，计数器的值就加1；引用失效时，计数器值减1，当计数器的值都为0的对象就是不再被引用的。<br>优点：实现简单，判定效率高<br>缺点：对象之间互相循环引用的情况</p>
+<p>2.根搜索算法，通过一系列的“GC Roots”对象作为起始点，从这些节点开始向下搜索，搜索所走的路径成为引用链（Reference Chain)，当一个对象到GC Roots没有任何引用链相连时，则证明此对象是不可用的。<br>垃圾收集算法<br>
+            
+            <p class="more">
+                <a href="https://tuwaner.com/2014/03/21/Java%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%92%8C%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E7%AD%96%E7%95%A5/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://tuwaner.com/2014/03/21/Java%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%92%8C%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E7%AD%96%E7%95%A5/" title="Java垃圾收集和内存分配策略">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/1.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章列表 item -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+            <a href="javascript: void(0);" class="cat">未分类</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://tuwaner.com/2013/11/17/%E5%85%B3%E4%BA%8EJava%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
+    		关于Java技术的一些理解
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2013-11-16T16:00:00.000Z">2013-11-17</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/Java/" title="Java">Java</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p>刚接触java时，很不能理解jdk、java se、java ee、jdk1.5、j2ee 1.4等一些词语，感觉很混乱。后来通过查阅一些资料，知道jdk是java的核心，提供了java运行时环境、java工具盒java基础类库(也就是一些基础的API)。java的版本最初有两个，一个是java1.1和java1.2，后来为了区分将java1.2改为了java2，现在我们所说的java都是指java2。在java2之前的jdk版本都是1.1X的。java中jdk有三个j2se、j2ee、j2me，其中j2se称为标准版，也就是通用的一个版本，从jdk5.0改为Java SE;j2ee称为企业版，使用这种jdk开发j2ee应用程序，从5.0开始改为Java EE;ME(J2ME)，micro edition，主要用于移动设备、嵌入式设备上的java应用程序，从JDK 5.0开始，改名为Java ME。</p>
+<p>j2ee使用多层的分布式应用模型，典型分层是四层结构：<br>a.运行在客户端机器上的客户层组件<br>b.运行在J2ee服务器上的Web层组件<br>c.运行在j2ee服务器上的业务逻辑层组件<br>d.运行在EIS服务器上的企业信息系统(Enterprise informationsystem)层软件(好专业，就是与数据库的连接操作)</p>
+<p><img src="/images/20131117105211624.jpg" alt=""><br>
+            
+            <p class="more">
+                <a href="https://tuwaner.com/2013/11/17/%E5%85%B3%E4%BA%8EJava%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://tuwaner.com/2013/11/17/%E5%85%B3%E4%BA%8EJava%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="关于Java技术的一些理解">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/7.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章列表 item -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+            <a href="javascript: void(0);" class="cat">未分类</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://tuwaner.com/2013/11/02/Spring%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+    		Spring框架学习笔记
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2013-11-01T16:00:00.000Z">2013-11-02</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/%E6%A1%86%E6%9E%B6/" title="框架">框架</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <h4 id="一、Spring框架概述">一、Spring框架概述</h4><p>1、 Spring框架提供了一个开发平台，用于整合其他技术，例如Struts，Hibernate，Mybatis等。举个例子Spring就像是一台电脑的主板，为各种硬件设施提供了接口，CPU，内存，硬盘都有各自的接口。这样做的好处也是显而易见的，比如在改善系统的结构方面，更利于系统的扩展和升级。<br>     2、作用：a,提供了整合其他技术的API<br>                   b,提供了创建对象的功能，这样Spring就编程了一个大的工厂，所以spring是一个具有工厂功能的框架<br>                   c,spring提供了两种非常重要的机制IOC和AOP，这样的好处是降低了组件对象之间的耦合度。<br>
+            
+            <p class="more">
+                <a href="https://tuwaner.com/2013/11/02/Spring%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://tuwaner.com/2013/11/02/Spring%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Spring框架学习笔记">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/2.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章列表 item -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+            <a href="javascript: void(0);" class="cat">未分类</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://tuwaner.com/2012/03/16/%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">
+    		经典排序算法
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2012-03-15T16:00:00.000Z">2012-03-16</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/%E7%AE%97%E6%B3%95/" title="算法">算法</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p>本次介绍几种经典排序算法以及Java实现代码<br>1.冒泡排序<br>冒泡排序是属于相邻两两比较进行排序的一种，由于其实现是经过1到n-1轮排序，<br>通过比较相邻的两个数，大的向下继续与相邻的进行比较，直到找到正确的顺序位置。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">bubbleSort</span><span class="params">(<span class="type">int</span>[] a)</span> &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; a.length - <span class="number">1</span>; i++) &#123;<span class="comment">//比较轮次，经过n-1次比较</span></span><br><span class="line">			<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; a.length - <span class="number">1</span> - i; j++) &#123;<span class="comment">//每次比较相邻的两个数，大的向后移动</span></span><br><span class="line">				<span class="keyword">if</span> (a[j] &gt; a[j + <span class="number">1</span>]) &#123;</span><br><span class="line">					<span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> a[j + <span class="number">1</span>];</span><br><span class="line">					a[j + <span class="number">1</span>] = a[j];</span><br><span class="line">					a[j] = temp;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+            
+            <p class="more">
+                <a href="https://tuwaner.com/2012/03/16/%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://tuwaner.com/2012/03/16/%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" title="经典排序算法">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/6.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章列表 item -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+            <a href="javascript: void(0);" class="cat">未分类</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://tuwaner.com/2012/03/11/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/">
+    		二分查找Java实现
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2012-03-10T16:00:00.000Z">2012-03-11</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/%E7%AE%97%E6%B3%95/" title="算法">算法</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p>这个栗子是用Java实现的二分查找</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BinarySearch</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">binarySearch</span><span class="params">(<span class="type">int</span> array[], <span class="type">int</span> number, <span class="type">int</span> value)</span> &#123;</span><br><span class="line">		<span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">		<span class="type">int</span> <span class="variable">right</span> <span class="operator">=</span> number - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">			<span class="type">int</span> <span class="variable">middle</span> <span class="operator">=</span> left + ((right - left) &gt;&gt; <span class="number">1</span>);</span><br><span class="line">			<span class="keyword">if</span> (array[middle] &gt; value) &#123;</span><br><span class="line">				right = middle - <span class="number">1</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (array[middle] &lt; value) &#123;</span><br><span class="line">				left = middle + <span class="number">1</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="keyword">return</span> middle;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            
+            <p class="more">
+                <a href="https://tuwaner.com/2012/03/11/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://tuwaner.com/2012/03/11/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" title="二分查找Java实现">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/1.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章列表 item -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+            <a href="javascript: void(0);" class="cat">未分类</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://tuwaner.com/2011/08/13/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%88%97%E5%92%8C/">
+    		求最大子序列和的问题
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2011-08-12T16:00:00.000Z">2011-08-13</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/%E7%AE%97%E6%B3%95/" title="算法">算法</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p>问题：给定（可能有负数）整数A1，A2，…，An，求∑Ak的最大值。（所有整数均为负数，则最大子序列和为0）。</p>
+<p>1.穷举法<br>这种算法就是穷举所有的可能。for循环中的循环变量反映了Java中数组从0开始而不是从1开始这样一个事实。还有，本算法并不计算实际的子序列；实际的计算还要添加一些额外的代码。这个算法的运行时间为O(N3)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">maxSubSum1</span><span class="params">(<span class="type">int</span>[] a)</span> &#123;</span><br><span class="line">		<span class="type">int</span> <span class="variable">maxSum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; a.length; i++)</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i; j &lt; a.length; j++)&#123;</span><br><span class="line">			<span class="type">int</span> <span class="variable">thisSum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> i; k &lt;= j; k++)</span><br><span class="line">				thisSum += a[k];</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span>(thisSum &gt; maxSum)</span><br><span class="line">				maxSum = thisSum;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> maxSum;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure><br>
+            
+            <p class="more">
+                <a href="https://tuwaner.com/2011/08/13/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%88%97%E5%92%8C/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://tuwaner.com/2011/08/13/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%88%97%E5%92%8C/" title="求最大子序列和的问题">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/3.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章列表 item -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+            <a href="javascript: void(0);" class="cat">未分类</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://tuwaner.com/2010/11/11/hello-world/">
+    		Hello World
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2010-11-10T16:00:00.000Z">2010-11-11</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/Java/" title="Java">Java</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p>Welcome to <a href="http://hexo.io/">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+            
+            <p class="more">
+                <a href="https://tuwaner.com/2010/11/11/hello-world/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://tuwaner.com/2010/11/11/hello-world/" title="Hello World">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/1.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+
+    
+    <nav class="page-navigator">
+        <span class="page-number current">1</span>
+    </nav>
+    
+
+
+
+
+            </div>
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章搜索</strong></h3>
+        <div class="search-form">
+  <form
+    id="searchForm"
+    method="GET"
+    action="https://www.baidu.com/s"
+    ectype="application/x-www-form-urlencoded"
+    target="_blank"
+    autocomplete="false"
+    onsubmit="javascript: return false;">
+    <input
+      id="searchKeyword"
+      type="text"
+      class="form-control"
+      placeholder="输入关键字搜索"
+      autocomplete="false"
+    />
+    <input id="searchKeywordHidden" type="hidden" name="wd" />
+    <input id="searchButton" class="btn" type="submit" value="搜索" />
+  </form>
+</div>
+    </section>
+    
+
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/%E7%AE%97%E6%B3%95/" title="算法">算法 (6)</a>
+  
+    <a class="tag-item" href="/tags/Java/" title="Java">Java (4)</a>
+  
+    <a class="tag-item" href="/tags/Github/" title="Github">Github (2)</a>
+  
+    <a class="tag-item" href="/tags/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/" title="动态代理">动态代理 (1)</a>
+  
+    <a class="tag-item" href="/tags/jdk/" title="jdk">jdk (1)</a>
+  
+    <a class="tag-item" href="/tags/%E5%AD%97%E8%8A%82%E7%A0%81/" title="字节码">字节码 (1)</a>
+  
+    <a class="tag-item" href="/tags/Name-com/" title="Name.com">Name.com (1)</a>
+  
+    <a class="tag-item" href="/tags/%E6%A1%86%E6%9E%B6/" title="框架">框架 (1)</a>
+  
+    <a class="tag-item" href="/tags/Vultr/" title="Vultr">Vultr (1)</a>
+  
+    <a class="tag-item" href="/tags/VPS/" title="VPS">VPS (1)</a>
+  
+    <a class="tag-item" href="/tags/%E6%AF%94%E7%89%B9%E5%B8%81/" title="比特币">比特币 (1)</a>
+  
+    <a class="tag-item" href="/tags/Bitcoin/" title="Bitcoin">Bitcoin (1)</a>
+  
+    <a class="tag-item" href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" title="区块链">区块链 (1)</a>
+  
+    <a class="tag-item" href="/tags/%E4%B8%AD%E6%9C%AC%E8%81%AA/" title="中本聪">中本聪 (1)</a>
+  
+    <a class="tag-item" href="/tags/Elasticsearch/" title="Elasticsearch">Elasticsearch (1)</a>
+  
+</div>
+    </section>
+    
+
+    
+
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2014-2026
+    
+
+    <a href="/">Jelon Loves You</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+
+<script src="/js/main.js?v=1778481670161.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>关于Java技术的一些理解 | </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="个人博客" >
+    <meta name="description" content="我的个人博客" >
+
+    
+    <link rel="alternative" href="/atom.xml" title="" type="application/atom+xml" >
+    
+    
+    <link rel="icon" href="/" >
+    
+    
+<link rel="stylesheet" href="/css/style.css?v=1778481670161.css">
+
+    <!--[if lt IE 9]>
+    
+<script src="/js/html5.js"></script>
+
+    <![endif]-->
+    
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
+
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name"></span>
+                    <span class="description">null</span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav iconfont icon-nav" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/2013/11/17/%E5%85%B3%E4%BA%8EJava%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html" class="item ">
+                <a href="/" title="首页" class="iconfont icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/2013/11/17/%E5%85%B3%E4%BA%8EJava%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html" class="item ">
+                <a href="/archives/" title="归档" class="iconfont icon-archives">&nbsp;归档</a>
+            </li>
+            
+            <li rel="/2013/11/17/%E5%85%B3%E4%BA%8EJava%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html" class="item ">
+                <a href="/about/" title="关于" class="iconfont icon-staff">&nbsp;关于</a>
+            </li>
+            
+            <li rel="/2013/11/17/%E5%85%B3%E4%BA%8EJava%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html" class="item ">
+                <a href="/comment/" title="留言" class="iconfont icon-comment">&nbsp;留言</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/avatar.jpg" alt="avatar" title="Jelon" >
+            </div>
+        </div>
+    </section>
+</header>
+
+
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 文章页 -->
+<!-- 文章 -->
+<article class="post article">
+    <header class="text-center">
+        <h3 class="post-title"><span>关于Java技术的一些理解</span></h3>
+    </header>
+    <p class="post-meta text-center">
+        Jelon 发表于
+        <time datetime="2013-11-16T16:00:00.000Z">2013-11-17</time>
+    </p>
+    <div id="JELON__articlePostContent" class="post-content">
+        <p>刚接触java时，很不能理解jdk、java se、java ee、jdk1.5、j2ee 1.4等一些词语，感觉很混乱。后来通过查阅一些资料，知道jdk是java的核心，提供了java运行时环境、java工具盒java基础类库(也就是一些基础的API)。java的版本最初有两个，一个是java1.1和java1.2，后来为了区分将java1.2改为了java2，现在我们所说的java都是指java2。在java2之前的jdk版本都是1.1X的。java中jdk有三个j2se、j2ee、j2me，其中j2se称为标准版，也就是通用的一个版本，从jdk5.0改为Java SE;j2ee称为企业版，使用这种jdk开发j2ee应用程序，从5.0开始改为Java EE;ME(J2ME)，micro edition，主要用于移动设备、嵌入式设备上的java应用程序，从JDK 5.0开始，改名为Java ME。</p>
+<p>j2ee使用多层的分布式应用模型，典型分层是四层结构：<br>a.运行在客户端机器上的客户层组件<br>b.运行在J2ee服务器上的Web层组件<br>c.运行在j2ee服务器上的业务逻辑层组件<br>d.运行在EIS服务器上的企业信息系统(Enterprise informationsystem)层软件(好专业，就是与数据库的连接操作)</p>
+<p><img src="/images/20131117105211624.jpg" alt=""><br><span id="more"></span></p>
+<h4 id="J2EE应用程序组件">J2EE应用程序组件</h4><p>j2ee应用程序由应用组件构成，组件式符合某种规范具有独立功能的软件单元。J2EE说明书中定义了以下的J2EE组件：</p>
+<p>应用客户端程序和applets是客户层组件.<br>Java Servlet和JavaServer Pages(JSP)是web层组件.<br>Enterprise JavaBeans(EJB)是业务层组件.</p>
+<p><img src="/images/20131117105211625.jpg" alt=""></p>
+<h4 id="J2EE核心API和组件">J2EE核心API和组件</h4><p>1.JDBC：JDBC为访问不同的数据库提供了一种统一的途径，JDBC对开发者屏蔽了一些技术细节，另外对数据库的访问也具有与平台无关性。<br>2.JSP：服务器端动态生成页面技术，有HTML代码和嵌入其中的java代码组成服务器在页面被客户端所请求以后对这些java代码进行处理，然后将生成的HTML页面返回给客户端的浏览器。</p>
+<p>3.Servlet：Servlet用来扩展Web服务器的功能，以解决Web服务器对只能处理静态页面。Servlet的功能和JSP类似，不过实现方式不同。JSP通常是大多数HTML代码中嵌入少量的Java代码，而servlets全部由Java写成并且生成HTML。</p>
+<p>4.XML：XML是一种可以用来定义其他标记语言的语言。主要用来数据的共享。</p>
+<p>5.EJB：… …</p>
+
+    </div>
+    <p class="eof">-- EOF --</p>
+    <p class="post-meta">
+        <span class="post-cat">分类：
+            
+        </span>
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/Java/" title="Java">Java</a>
+    
+
+        </span>
+    </p>
+</article>
+<!-- 分享按钮 -->
+
+  <div class="article-share clearfix text-center">
+    <div class="share-area">
+      <span class="share-txt">分享到：</span>
+      <a href="javascript: window.open('http://service.weibo.com/share/share.php?url=' + encodeURIComponent(location.href) + '&title=' + document.title + '&language=zh_cn');" class="share-icon weibo"></a>
+      <a href="javascript: alert('请复制链接到微信并发送');" class="share-icon wechat"></a>
+      <a href="javascript: window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + encodeURIComponent(location.href) + '&title=' + document.title);" class="share-icon qqzone"></a>
+      <a href="javascript: window.open('http://connect.qq.com/widget/shareqq/index.html?url=' + encodeURIComponent(location.href) + '&desc=Jelon个人博客&title=' + document.title + '&callback=' + encodeURIComponent(location.href));" class="share-icon qq"></a>
+      <a href="javascript: window.open('http://shuo.douban.com/!service/share?href=' + encodeURIComponent(location.href) + '&name=' + document.title + '&text=' + document.title);" class="share-icon douban"></a>
+    </div>
+  </div>
+
+
+<!-- 上一篇/下一篇 -->
+
+<div class="article-nav clearfix">
+    
+    <span class="prev fl">
+        上一篇<br >
+        <a href="/2014/03/21/Java%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%92%8C%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E7%AD%96%E7%95%A5/">
+            
+                Java垃圾收集和内存分配策略
+            
+        </a>
+    </span>
+    
+
+    
+    <span class="next fr">
+        下一篇<br >
+        <a href="/2013/11/02/Spring%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+            
+                Spring框架学习笔记
+            
+        </a>
+    </span>
+    
+</div>
+
+<!-- 文章评论 -->
+
+
+
+            </div>
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章搜索</strong></h3>
+        <div class="search-form">
+  <form
+    id="searchForm"
+    method="GET"
+    action="https://www.baidu.com/s"
+    ectype="application/x-www-form-urlencoded"
+    target="_blank"
+    autocomplete="false"
+    onsubmit="javascript: return false;">
+    <input
+      id="searchKeyword"
+      type="text"
+      class="form-control"
+      placeholder="输入关键字搜索"
+      autocomplete="false"
+    />
+    <input id="searchKeywordHidden" type="hidden" name="wd" />
+    <input id="searchButton" class="btn" type="submit" value="搜索" />
+  </form>
+</div>
+    </section>
+    
+
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/%E7%AE%97%E6%B3%95/" title="算法">算法 (6)</a>
+  
+    <a class="tag-item" href="/tags/Java/" title="Java">Java (4)</a>
+  
+    <a class="tag-item" href="/tags/Github/" title="Github">Github (2)</a>
+  
+    <a class="tag-item" href="/tags/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/" title="动态代理">动态代理 (1)</a>
+  
+    <a class="tag-item" href="/tags/jdk/" title="jdk">jdk (1)</a>
+  
+    <a class="tag-item" href="/tags/%E5%AD%97%E8%8A%82%E7%A0%81/" title="字节码">字节码 (1)</a>
+  
+    <a class="tag-item" href="/tags/Name-com/" title="Name.com">Name.com (1)</a>
+  
+    <a class="tag-item" href="/tags/%E6%A1%86%E6%9E%B6/" title="框架">框架 (1)</a>
+  
+    <a class="tag-item" href="/tags/Vultr/" title="Vultr">Vultr (1)</a>
+  
+    <a class="tag-item" href="/tags/VPS/" title="VPS">VPS (1)</a>
+  
+    <a class="tag-item" href="/tags/%E6%AF%94%E7%89%B9%E5%B8%81/" title="比特币">比特币 (1)</a>
+  
+    <a class="tag-item" href="/tags/Bitcoin/" title="Bitcoin">Bitcoin (1)</a>
+  
+    <a class="tag-item" href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" title="区块链">区块链 (1)</a>
+  
+    <a class="tag-item" href="/tags/%E4%B8%AD%E6%9C%AC%E8%81%AA/" title="中本聪">中本聪 (1)</a>
+  
+    <a class="tag-item" href="/tags/Elasticsearch/" title="Elasticsearch">Elasticsearch (1)</a>
+  
+</div>
+    </section>
+    
+
+    
+
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2014-2026
+    
+
+    <a href="/">Jelon Loves You</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+
+<script src="/js/main.js?v=1778481670161.js"></script>
+
+
+</body>
+</html>

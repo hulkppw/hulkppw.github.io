@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>文章归档: 2019 | </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="个人博客" >
+    <meta name="description" content="我的个人博客" >
+
+    
+    <link rel="alternative" href="/atom.xml" title="" type="application/atom+xml" >
+    
+    
+    <link rel="icon" href="/" >
+    
+    
+<link rel="stylesheet" href="/css/style.css?v=1778481670166.css">
+
+    <!--[if lt IE 9]>
+    
+<script src="/js/html5.js"></script>
+
+    <![endif]-->
+    
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
+
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name"></span>
+                    <span class="description">null</span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav iconfont icon-nav" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/archives/2019/index.html" class="item ">
+                <a href="/" title="首页" class="iconfont icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/archives/2019/index.html" class="item ">
+                <a href="/archives/" title="归档" class="iconfont icon-archives">&nbsp;归档</a>
+            </li>
+            
+            <li rel="/archives/2019/index.html" class="item ">
+                <a href="/about/" title="关于" class="iconfont icon-staff">&nbsp;关于</a>
+            </li>
+            
+            <li rel="/archives/2019/index.html" class="item ">
+                <a href="/comment/" title="留言" class="iconfont icon-comment">&nbsp;留言</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/avatar.jpg" alt="avatar" title="Jelon" >
+            </div>
+        </div>
+    </section>
+</header>
+
+
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 文章归档 -->
+
+  
+    <h3 class="widget-hd">
+        <strong>
+            
+                `2019年`文章归档
+            
+        </strong>
+    </h3>
+    
+        <!-- 文章列表 item -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+            <a href="javascript: void(0);" class="cat">未分类</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://tuwaner.com/2019/03/16/%E6%B7%98%E6%B1%B0%E7%AE%97%E6%B3%95LRU/">
+    		淘汰算法LRU
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2019-03-15T16:00:00.000Z">2019-03-16</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/%E7%AE%97%E6%B3%95/" title="算法">算法</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p>基于双链表实现LRU<br>原理： 将Cache的所有位置都用双连表连接起来，当一个位置被命中之后，就将通过调整链表的指向，将该位置调整到链表头的位置，新加入的Cache直接加到链表头中。这样，在多次进行Cache操作后，最近被命中的，就会被向链表头方向移动，而没有命中的，而想链表后面移动，链表尾则表示最近最少使用的Cache。当需要替换内容时候，链表的最后位置就是最少被命中的位置，我们只需要淘汰链表最后的部分即可。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LRUCache</span> &#123;  </span><br><span class="line">	</span><br><span class="line">	<span class="comment">//缓存大小</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> cacheSize;</span><br><span class="line">    <span class="comment">//缓存容器</span></span><br><span class="line">    <span class="keyword">private</span> Hashtable&lt;K, CacheNode&lt;K, V&gt;&gt; nodes;</span><br><span class="line">    <span class="comment">//当前缓存对象数量</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> currentSize;</span><br><span class="line">    <span class="comment">//(实现双链表)链表头</span></span><br><span class="line">    <span class="keyword">private</span> CacheNode first;</span><br><span class="line">    <span class="comment">//(实现双链表)链表尾</span></span><br><span class="line">    <span class="keyword">private</span> CacheNode last;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">LRUCache</span><span class="params">(<span class="type">int</span> i)</span> &#123;</span><br><span class="line">        currentSize = <span class="number">0</span>;</span><br><span class="line">        cacheSize = i;</span><br><span class="line">        nodes = <span class="keyword">new</span> <span class="title class_">Hashtable</span>(i);<span class="comment">//缓存容器</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 链表节点</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">CacheNode</span>&lt;K,V&gt; &#123;</span><br><span class="line">        CacheNode prev;</span><br><span class="line">        CacheNode next;</span><br><span class="line">        K key;</span><br><span class="line">        V value;</span><br><span class="line">        CacheNode() &#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> V <span class="title function_">get</span><span class="params">(K key)</span>&#123;</span><br><span class="line">        CacheNode&lt;K, V&gt; node = nodes.get(key);</span><br><span class="line">        <span class="keyword">if</span>(node!=<span class="literal">null</span>)&#123;</span><br><span class="line">            moveToHead(node);</span><br><span class="line">            <span class="keyword">return</span> node.value;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">put</span><span class="params">(K key, V value)</span>&#123;</span><br><span class="line">        CacheNode&lt;K, V&gt; node = nodes.get(key);</span><br><span class="line">        <span class="keyword">if</span>(node == <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(currentSize &gt;= cacheSize)&#123;</span><br><span class="line">                <span class="keyword">if</span>(last != <span class="literal">null</span>)&#123;</span><br><span class="line">                    nodes.remove(last.key);</span><br><span class="line">                &#125;</span><br><span class="line">                removeLast();</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                currentSize++;</span><br><span class="line">            &#125;</span><br><span class="line">            node = <span class="keyword">new</span> <span class="title class_">CacheNode</span>&lt;&gt;();</span><br><span class="line">        &#125;</span><br><span class="line">        node.value=value;</span><br><span class="line">        node.key=key;</span><br><span class="line">        moveToHead(node);</span><br><span class="line">        nodes.put(key, node);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">removeLast</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(last!=<span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(last.prev != <span class="literal">null</span>)&#123;</span><br><span class="line">                last.prev.next = <span class="literal">null</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                first = <span class="literal">null</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            last = last.prev;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">moveToHead</span><span class="params">(CacheNode node)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(node == first)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (node.prev != <span class="literal">null</span>) &#123;</span><br><span class="line">            node.prev.next = node.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (node.next != <span class="literal">null</span>) &#123;</span><br><span class="line">            node.next.prev = node.prev;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (last == node) &#123;</span><br><span class="line">            last = node.prev;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (first != <span class="literal">null</span>) &#123;</span><br><span class="line">            node.next = first;</span><br><span class="line">            first.prev = node;</span><br><span class="line">        &#125;</span><br><span class="line">        first = node;</span><br><span class="line">        node.prev = <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">if</span> (last == <span class="literal">null</span>) &#123;</span><br><span class="line">            last = first;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure></p>
+
+            
+            <p class="more">
+                <a href="https://tuwaner.com/2019/03/16/%E6%B7%98%E6%B1%B0%E7%AE%97%E6%B3%95LRU/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://tuwaner.com/2019/03/16/%E6%B7%98%E6%B1%B0%E7%AE%97%E6%B3%95LRU/" title="淘汰算法LRU">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/6.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章列表 item -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+            <a href="javascript: void(0);" class="cat">未分类</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://tuwaner.com/2019/03/15/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E6%8C%87%E5%AE%9A%E8%8A%82%E7%82%B9/">
+    		链表相关算法
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2019-03-14T16:00:00.000Z">2019-03-15</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/%E7%AE%97%E6%B3%95/" title="算法">算法</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p>1.删除链表指定节点</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LinkedNode</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> LinkedNode <span class="title function_">removeElement</span><span class="params">(LinkedNode head, <span class="type">int</span> val)</span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//先从头结点开始删</span></span><br><span class="line">		<span class="keyword">while</span>(head != <span class="literal">null</span> &amp;&amp; head.val == val)&#123;</span><br><span class="line">			head = head.next;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(head==<span class="literal">null</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span> head;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="type">LinkedNode</span> <span class="variable">pre</span> <span class="operator">=</span> head;</span><br><span class="line">		<span class="keyword">while</span>(pre.next!=<span class="literal">null</span>)&#123;</span><br><span class="line">			<span class="keyword">if</span>(pre.next.val==val)&#123;</span><br><span class="line">				pre.next = pre.next.next;</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				pre = pre.next;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> head;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.有序链表插入元素</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LinkedNode</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">insertElement</span><span class="params">(LinkedNode node)</span>&#123;</span><br><span class="line">		<span class="type">LinkedNode</span> <span class="variable">pre</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">		<span class="type">LinkedNode</span> <span class="variable">current</span> <span class="operator">=</span> first;</span><br><span class="line">		<span class="keyword">while</span>(current!=<span class="literal">null</span>&amp;&amp;node.value&lt;current.value)&#123;</span><br><span class="line">			pre = current;</span><br><span class="line">			current = current.next;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(pre==<span class="literal">null</span>)&#123;</span><br><span class="line">			first = node;</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			pre.next = node;</span><br><span class="line">		&#125;</span><br><span class="line">		node.next = current;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3.判断链表是否有环</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="type">boolean</span> <span class="title function_">isLoopList</span><span class="params">(ListNode&lt;T&gt; head)</span>&#123;</span><br><span class="line">	ListNode&lt;T&gt; slowPointer, fastPointer;</span><br><span class="line"></span><br><span class="line">	slowPointer = fastPointer = head;</span><br><span class="line">	<span class="keyword">while</span>(fastPointer != <span class="literal">null</span> &amp;&amp; fastPointer.next != <span class="literal">null</span>)&#123;</span><br><span class="line">		slowPointer=slowPointer.next;</span><br><span class="line">		fastPointer=fastPointer.next.next;</span><br><span class="line">		<span class="keyword">if</span>(slowPointer == fastPointer)&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            
+            <p class="more">
+                <a href="https://tuwaner.com/2019/03/15/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E6%8C%87%E5%AE%9A%E8%8A%82%E7%82%B9/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://tuwaner.com/2019/03/15/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E6%8C%87%E5%AE%9A%E8%8A%82%E7%82%B9/" title="链表相关算法">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/5.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章列表 item -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+            <a href="javascript: void(0);" class="cat">未分类</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://tuwaner.com/2019/01/17/%E5%9F%BA%E4%BA%8ESpring-Data-Elasticsearch%E4%B8%89%E7%A7%8D%E6%9F%A5%E8%AF%A2%E7%9A%84%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B/">
+    		基于Spring-Data-Elasticsearch三种查询的使用示例
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2019-01-16T16:00:00.000Z">2019-01-17</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/Elasticsearch/" title="Elasticsearch">Elasticsearch</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p>1.CriteriaQuery<br>标准查询<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Criteria</span> <span class="variable">criteria</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Criteria</span>(<span class="string">&quot;id&quot;</span>).is(<span class="string">&quot;1&quot;</span>);</span><br><span class="line"><span class="type">CriteriaQuery</span> <span class="variable">query</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">CriteriaQuery</span>(criteria);</span><br><span class="line">query.addIndices(<span class="string">&quot;test&quot;</span>);</span><br><span class="line">query.addTypes(<span class="string">&quot;test&quot;</span>);</span><br><span class="line">query.setPageable(PageRequest.of(page, size))</span><br><span class="line">List&lt;TestObject&gt; list = template.queryForList(criteria, TestObject.class);	</span><br></pre></td></tr></table></figure><br>
+            
+            <p class="more">
+                <a href="https://tuwaner.com/2019/01/17/%E5%9F%BA%E4%BA%8ESpring-Data-Elasticsearch%E4%B8%89%E7%A7%8D%E6%9F%A5%E8%AF%A2%E7%9A%84%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://tuwaner.com/2019/01/17/%E5%9F%BA%E4%BA%8ESpring-Data-Elasticsearch%E4%B8%89%E7%A7%8D%E6%9F%A5%E8%AF%A2%E7%9A%84%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B/" title="基于Spring-Data-Elasticsearch三种查询的使用示例">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/7.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+
+    
+    <nav class="page-navigator">
+        <span class="page-number current">1</span>
+    </nav>
+    
+
+
+
+
+            </div>
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章搜索</strong></h3>
+        <div class="search-form">
+  <form
+    id="searchForm"
+    method="GET"
+    action="https://www.baidu.com/s"
+    ectype="application/x-www-form-urlencoded"
+    target="_blank"
+    autocomplete="false"
+    onsubmit="javascript: return false;">
+    <input
+      id="searchKeyword"
+      type="text"
+      class="form-control"
+      placeholder="输入关键字搜索"
+      autocomplete="false"
+    />
+    <input id="searchKeywordHidden" type="hidden" name="wd" />
+    <input id="searchButton" class="btn" type="submit" value="搜索" />
+  </form>
+</div>
+    </section>
+    
+
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/%E7%AE%97%E6%B3%95/" title="算法">算法 (6)</a>
+  
+    <a class="tag-item" href="/tags/Java/" title="Java">Java (4)</a>
+  
+    <a class="tag-item" href="/tags/Github/" title="Github">Github (2)</a>
+  
+    <a class="tag-item" href="/tags/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/" title="动态代理">动态代理 (1)</a>
+  
+    <a class="tag-item" href="/tags/jdk/" title="jdk">jdk (1)</a>
+  
+    <a class="tag-item" href="/tags/%E5%AD%97%E8%8A%82%E7%A0%81/" title="字节码">字节码 (1)</a>
+  
+    <a class="tag-item" href="/tags/Name-com/" title="Name.com">Name.com (1)</a>
+  
+    <a class="tag-item" href="/tags/%E6%A1%86%E6%9E%B6/" title="框架">框架 (1)</a>
+  
+    <a class="tag-item" href="/tags/Vultr/" title="Vultr">Vultr (1)</a>
+  
+    <a class="tag-item" href="/tags/VPS/" title="VPS">VPS (1)</a>
+  
+    <a class="tag-item" href="/tags/%E6%AF%94%E7%89%B9%E5%B8%81/" title="比特币">比特币 (1)</a>
+  
+    <a class="tag-item" href="/tags/Bitcoin/" title="Bitcoin">Bitcoin (1)</a>
+  
+    <a class="tag-item" href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" title="区块链">区块链 (1)</a>
+  
+    <a class="tag-item" href="/tags/%E4%B8%AD%E6%9C%AC%E8%81%AA/" title="中本聪">中本聪 (1)</a>
+  
+    <a class="tag-item" href="/tags/Elasticsearch/" title="Elasticsearch">Elasticsearch (1)</a>
+  
+</div>
+    </section>
+    
+
+    
+
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2014-2026
+    
+
+    <a href="/">Jelon Loves You</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+
+<script src="/js/main.js?v=1778481670166.js"></script>
+
+
+</body>
+</html>

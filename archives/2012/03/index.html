@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>文章归档: 2012/3 | </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="个人博客" >
+    <meta name="description" content="我的个人博客" >
+
+    
+    <link rel="alternative" href="/atom.xml" title="" type="application/atom+xml" >
+    
+    
+    <link rel="icon" href="/" >
+    
+    
+<link rel="stylesheet" href="/css/style.css?v=1778481670163.css">
+
+    <!--[if lt IE 9]>
+    
+<script src="/js/html5.js"></script>
+
+    <![endif]-->
+    
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
+
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name"></span>
+                    <span class="description">null</span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav iconfont icon-nav" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/archives/2012/03/index.html" class="item ">
+                <a href="/" title="首页" class="iconfont icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/archives/2012/03/index.html" class="item ">
+                <a href="/archives/" title="归档" class="iconfont icon-archives">&nbsp;归档</a>
+            </li>
+            
+            <li rel="/archives/2012/03/index.html" class="item ">
+                <a href="/about/" title="关于" class="iconfont icon-staff">&nbsp;关于</a>
+            </li>
+            
+            <li rel="/archives/2012/03/index.html" class="item ">
+                <a href="/comment/" title="留言" class="iconfont icon-comment">&nbsp;留言</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/avatar.jpg" alt="avatar" title="Jelon" >
+            </div>
+        </div>
+    </section>
+</header>
+
+
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 文章归档 -->
+
+  
+    <h3 class="widget-hd">
+        <strong>
+            
+                `2012年3月`文章归档
+            
+        </strong>
+    </h3>
+    
+        <!-- 文章列表 item -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+            <a href="javascript: void(0);" class="cat">未分类</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://tuwaner.com/2012/03/16/%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">
+    		经典排序算法
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2012-03-15T16:00:00.000Z">2012-03-16</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/%E7%AE%97%E6%B3%95/" title="算法">算法</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p>本次介绍几种经典排序算法以及Java实现代码<br>1.冒泡排序<br>冒泡排序是属于相邻两两比较进行排序的一种，由于其实现是经过1到n-1轮排序，<br>通过比较相邻的两个数，大的向下继续与相邻的进行比较，直到找到正确的顺序位置。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">bubbleSort</span><span class="params">(<span class="type">int</span>[] a)</span> &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; a.length - <span class="number">1</span>; i++) &#123;<span class="comment">//比较轮次，经过n-1次比较</span></span><br><span class="line">			<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; a.length - <span class="number">1</span> - i; j++) &#123;<span class="comment">//每次比较相邻的两个数，大的向后移动</span></span><br><span class="line">				<span class="keyword">if</span> (a[j] &gt; a[j + <span class="number">1</span>]) &#123;</span><br><span class="line">					<span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> a[j + <span class="number">1</span>];</span><br><span class="line">					a[j + <span class="number">1</span>] = a[j];</span><br><span class="line">					a[j] = temp;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+            
+            <p class="more">
+                <a href="https://tuwaner.com/2012/03/16/%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://tuwaner.com/2012/03/16/%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" title="经典排序算法">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/6.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+        <!-- 文章列表 item -->
+<article class="post">
+    <header>
+        <!-- 标签这有且只能显示一个 -->
+        
+            <a href="javascript: void(0);" class="cat">未分类</a>
+        
+        <!-- 文章标题 -->
+        
+    <h3 class="post-title">
+    	<a href="https://tuwaner.com/2012/03/11/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/">
+    		二分查找Java实现
+    	</a>
+    </h3>
+
+    </header>
+    <p class="post-meta">
+        Jelon 发表于
+        <time datetime="2012-03-10T16:00:00.000Z">2012-03-11</time>
+        &nbsp;&nbsp;
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/%E7%AE%97%E6%B3%95/" title="算法">算法</a>
+    
+
+        </span>
+    </p>
+
+    <div class="post-content">
+        <div class="post-excerpt">
+            
+                <p>这个栗子是用Java实现的二分查找</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BinarySearch</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">binarySearch</span><span class="params">(<span class="type">int</span> array[], <span class="type">int</span> number, <span class="type">int</span> value)</span> &#123;</span><br><span class="line">		<span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">		<span class="type">int</span> <span class="variable">right</span> <span class="operator">=</span> number - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">			<span class="type">int</span> <span class="variable">middle</span> <span class="operator">=</span> left + ((right - left) &gt;&gt; <span class="number">1</span>);</span><br><span class="line">			<span class="keyword">if</span> (array[middle] &gt; value) &#123;</span><br><span class="line">				right = middle - <span class="number">1</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (array[middle] &lt; value) &#123;</span><br><span class="line">				left = middle + <span class="number">1</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="keyword">return</span> middle;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            
+            <p class="more">
+                <a href="https://tuwaner.com/2012/03/11/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/">阅读剩下更多</a>
+            </p>
+        </div>
+        <div class="post-thumbnail" data-img="">
+            <a href="https://tuwaner.com/2012/03/11/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" title="二分查找Java实现">
+                
+                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/1.jpg" alt="默认配图" >
+                
+            </a>
+        </div>
+    </div>
+</article>
+
+    
+
+    
+    <nav class="page-navigator">
+        <span class="page-number current">1</span>
+    </nav>
+    
+
+
+
+
+            </div>
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章搜索</strong></h3>
+        <div class="search-form">
+  <form
+    id="searchForm"
+    method="GET"
+    action="https://www.baidu.com/s"
+    ectype="application/x-www-form-urlencoded"
+    target="_blank"
+    autocomplete="false"
+    onsubmit="javascript: return false;">
+    <input
+      id="searchKeyword"
+      type="text"
+      class="form-control"
+      placeholder="输入关键字搜索"
+      autocomplete="false"
+    />
+    <input id="searchKeywordHidden" type="hidden" name="wd" />
+    <input id="searchButton" class="btn" type="submit" value="搜索" />
+  </form>
+</div>
+    </section>
+    
+
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/%E7%AE%97%E6%B3%95/" title="算法">算法 (6)</a>
+  
+    <a class="tag-item" href="/tags/Java/" title="Java">Java (4)</a>
+  
+    <a class="tag-item" href="/tags/Github/" title="Github">Github (2)</a>
+  
+    <a class="tag-item" href="/tags/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86/" title="动态代理">动态代理 (1)</a>
+  
+    <a class="tag-item" href="/tags/jdk/" title="jdk">jdk (1)</a>
+  
+    <a class="tag-item" href="/tags/%E5%AD%97%E8%8A%82%E7%A0%81/" title="字节码">字节码 (1)</a>
+  
+    <a class="tag-item" href="/tags/Name-com/" title="Name.com">Name.com (1)</a>
+  
+    <a class="tag-item" href="/tags/%E6%A1%86%E6%9E%B6/" title="框架">框架 (1)</a>
+  
+    <a class="tag-item" href="/tags/Vultr/" title="Vultr">Vultr (1)</a>
+  
+    <a class="tag-item" href="/tags/VPS/" title="VPS">VPS (1)</a>
+  
+    <a class="tag-item" href="/tags/%E6%AF%94%E7%89%B9%E5%B8%81/" title="比特币">比特币 (1)</a>
+  
+    <a class="tag-item" href="/tags/Bitcoin/" title="Bitcoin">Bitcoin (1)</a>
+  
+    <a class="tag-item" href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" title="区块链">区块链 (1)</a>
+  
+    <a class="tag-item" href="/tags/%E4%B8%AD%E6%9C%AC%E8%81%AA/" title="中本聪">中本聪 (1)</a>
+  
+    <a class="tag-item" href="/tags/Elasticsearch/" title="Elasticsearch">Elasticsearch (1)</a>
+  
+</div>
+    </section>
+    
+
+    
+
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2014-2026
+    
+
+    <a href="/">Jelon Loves You</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+
+<script src="/js/main.js?v=1778481670164.js"></script>
+
+
+</body>
+</html>
